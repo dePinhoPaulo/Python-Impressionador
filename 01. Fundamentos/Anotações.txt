@@ -1,0 +1,3 @@
+Modulo cocluido na trilha de analise de dados:
+    06. Trilha Impressionadora - Especialização em Python;
+    Link: https://github.com/dePinhoPaulo/Especializacao-em-Analise-de-Dados
