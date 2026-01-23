@@ -1,0 +1,35 @@
+AULA_01: Lendo Arquivos txt
+
+    Manipulação de arquivos txt.
+    
+    Método open: -> Abre um arquivo txt
+        arquivo = open('NomeArquivo.txt', 'r')
+    
+    ler o arquivo com os métodos
+        2. Método read():
+            texto_arquivo = arquivo.read()
+        3. Método readlines():
+            lista_linhas = arquivo.readlines()
+
+
+AULA_02: Escrevendo em Arquivo txt
+
+    Criação de um arquivo txt.
+        novo_arquivo = open('Resumo.txt', 'w')
+
+    Para escrever alguma coisa no arquivo:
+        4. Método write():
+            arquivo.write('Texto que quero escrever')
+
+    Fechar o arquivo:
+        5. Método close():
+            arquivo.close()
+
+
+AULA_03: Método With
+
+    Estrutura que abre e fecha o arquivo automatico (Funcionando com uma função).
+
+    6. Usando a estrutura with: -> ao final do with, a própria estrutura with fecha automaticamente o arquivo
+        with open('NomeArquivo.txt', 'w') as arquivo:
+            arquivo.write()
