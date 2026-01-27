@@ -33,3 +33,26 @@ AULA_03: Método With
     6. Usando a estrutura with: -> ao final do with, a própria estrutura with fecha automaticamente o arquivo
         with open('NomeArquivo.txt', 'w') as arquivo:
             arquivo.write()
+
+
+AULA_04: Explicação Desafio Python txt
+
+    Explicação do Desafio
+
+
+AULA_05: Solução Desafio Python txt - Parte 1
+
+    Deletando os elemento desnecessarios do arquivo;
+
+    Separando os emails das origens;
+
+
+AULA_06: Solução Desafio Python txt - Parte 2
+
+    Separação da quantidade de cada origem dos leads.
+
+
+AULA_07: Solução Desafio Python txt - Parte 3
+
+    Enviando os Indicadores para um arquivo txt.
+
