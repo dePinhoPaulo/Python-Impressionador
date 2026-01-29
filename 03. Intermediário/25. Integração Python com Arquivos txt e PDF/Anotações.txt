@@ -56,3 +56,16 @@ AULA_07: Solução Desafio Python txt - Parte 3
 
     Enviando os Indicadores para um arquivo txt.
 
+
+AULA_08: Mentoria - Leitura de XML e Notas Fiscais com Python
+
+    Objetivo do projeto: Extrair dados das notas fidcais atraves do XML.
+
+    Biblioteca:
+        xmltodict
+
+    Extraindo os dados em um dicionario:
+        with open('NFs Finais/DANFEBrota.xml', 'rb') as arquivo:
+            documento = xmltodict.parse(arquivo)
+
+    
