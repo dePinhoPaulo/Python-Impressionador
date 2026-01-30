@@ -68,4 +68,24 @@ AULA_08: Mentoria - Leitura de XML e Notas Fiscais com Python
         with open('NFs Finais/DANFEBrota.xml', 'rb') as arquivo:
             documento = xmltodict.parse(arquivo)
 
+    Extraindo dados especificos do XML:
+        pprint.pprint(documento['nfeProc']['NFe']['infNFe']['dest']['CPF'])
     
+    Extrair cada elemento do dicionario:
+        for item in documento['nfeProc']['NFe']:
+            print(item)
+    
+    Adicionando caminho do dicionario a uma variavel:
+        dic_nf = documento['nfeProc']['NFe']['infNFe']
+    
+    Extraindo dados dos produtos e inserindo na lista:
+        lista_produtos = []
+        produtos = dic_nf['det']
+        for produto in produtos:
+            valor_produto = produto['prod']['vProd']
+            nome_produto = produto['prod']['xProd']
+            lista_produtos.append((nome_produto, valor_produto))
+    
+    *Essa extração de dados em notas fiscais de PRODUTOS, Funciona em qualquer Nota Fiscal (mesmo formato em todo País):
+        Basta troca o diretorio da Nota no seguinte trecho:
+            with open('NFs Finais/DANFENespresso.xml', 'rb')
