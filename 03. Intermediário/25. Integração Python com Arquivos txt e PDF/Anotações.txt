@@ -89,3 +89,37 @@ AULA_08: Mentoria - Leitura de XML e Notas Fiscais com Python
     *Essa extração de dados em notas fiscais de PRODUTOS, Funciona em qualquer Nota Fiscal (mesmo formato em todo País):
         Basta troca o diretorio da Nota no seguinte trecho:
             with open('NFs Finais/DANFENespresso.xml', 'rb')
+
+    Criar DataFrame a partir de um Dicionario:
+        df_tabela = pd.DataFrame.from_dict(resposta)
+    
+    Exportar para excel, sem repetir linhas:
+        resposta = {
+            'Valor Total': [valor_total],
+            'CNPJ Vendedor': [cnpj_vendeu],
+            'Razão Social': [nome_vendeu],
+            'CPF Comprador': [cpf_comprou],
+            'Nome Comprador': [nome_comprou],
+            'Lista de Produtos': [lista_produtos]
+        }
+        *Passa todos valores com uma lista, pois uma coluna tem mais linhas que outra.
+    
+    Passa codigo para uma função:
+        def ler_xml_danfe(nota):
+        ###
+        return(resposta)
+    
+    Rodar script em varios arquivos da pasta:
+        import os
+        lista_arquivos = os.listdir('NFs Finais')
+        for arquivo in lista_arquivos:
+            if 'xml' in arquivo:
+                if 'DANFE' in arquivo:
+                    ler_xml_danfe(f'NFs Finais/{arquivo}')
+
+    Inserir cada dicionario de resposta em uma lista:
+        respostas.append(ler_xml_danfe(f'NFs Finais/{arquivo}'))
+    
+    Passa lista para DF e exporta para Excel:
+        df_tabela = pd.DataFrame(respostas)
+        df_tabela.to_excel('NFs.xlsx')
