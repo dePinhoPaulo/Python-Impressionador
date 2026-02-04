@@ -123,3 +123,40 @@ AULA_08: Mentoria - Leitura de XML e Notas Fiscais com Python
     Passa lista para DF e exporta para Excel:
         df_tabela = pd.DataFrame(respostas)
         df_tabela.to_excel('NFs.xlsx')
+
+
+AULA_09: Mentoria - Integração Python e Word
+
+    Verificar documentação: https://python-docx.readthedocs.io/en/latest/
+
+    Estrutura Basica:
+        documento = Document()
+        faturmaento = 1000
+        texto = f"""Paulo
+                Bom dia!
+                O faturamento da empresa ontem foi de R${faturmaento}
+                Att."""
+        paragrafo = documento.add_paragraph(texto)
+        documento.save('Texto.docx')
+            #Criando o documento
+            #Adicionando Texto
+            #Salvando arquivo
+    
+    Estilo de paragrafo:
+        #Edição do estilo
+        paragrafo.style = documento.styles.add_style("EstiloPaulo", WD_STYLE_TYPE.PARAGRAPH)
+        paragrafo.style.font.name = 'Algerian'
+        paragrafo.style.font.size = Pt(15)
+        paragrafo.style.font.bold = True
+
+        #Adicionando estilo ao paragrafo
+        paragrafo_2 = documento.add_paragraph("Quantidade de produtos vendidos: 10", "EstiloPaulo")
+
+    Adicionando Estilo diferente no meio do paragrafo:
+        texto = f"""Paulo O faturamento da empresa ontem foi de"""
+        resultado = f"""R${faturmaento}"""
+        texto_final = """Att."""
+
+        paragrafo = documento.add_paragraph(texto)
+        paragrafo.add_run(resultado).bold = True
+        paragrafo = documento.add_paragraph(texto_final)
