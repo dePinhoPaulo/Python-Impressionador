@@ -189,3 +189,51 @@ AULA_09: Mentoria - Integração Python e Word
                 if codigo in paragrafo.text:
                     paragrafo.text = paragrafo.text.replace(codigo, dicionario_valores[codigo])
     
+
+AULA_10: Integração Python e PDF - Como funciona
+
+    Verificar documentação:
+        tabula-py: https://pypdf.readthedocs.io/en/stable/
+        pypdf: https://pypdf.readthedocs.io/en/stable/
+    
+    Instalação das Bibliotecas:
+        %pip install pypdf2
+        %pip install tabula-py
+
+
+AULA_11: Separar páginas e Criar PDF
+
+    Estrutura para separa pagunas de um arquivo PDF
+
+    for i, pagina in enumerate(arquivo_pdf.pages):
+        num = i + 1
+        novo_pdf = pyf.PdfWriter()
+        novo_pdf.add_page(pagina)
+        with Path(f"paginas/Pagina {num}.pdf").open(mode="wb") as arquivo:
+            novo_pdf.write(arquivo)
+
+
+AULA_12: Juntar e Mesclar PDFs
+
+    Juntar varios arquivos em um unico PDF
+
+        Juntar Varias paginas de diferentes arquivos:
+            num_paginas = [1, 14, 16]
+            novo_arquivo = pyf.PdfWriter()
+
+            for num in num_paginas:
+                pagina_pdf = pyf.PdfReader(f"paginas/Pagina {num}.pdf")
+                novo_arquivo.add_page(pagina_pdf.pages[0])
+
+            with Path(f"Consolidado.pdf").open(mode='wb') as arquivo:
+                novo_arquivo.write(arquivo)
+
+        Juntar diferentes arquivos:
+            pdf_mesclado = pyf.PdfMerger()
+
+            pdf_mesclado.append('MGLU_ER_3T20_POR.pdf')
+            pdf_mesclado.append('MGLU_ER_4T20_POR.pdf')
+
+            with Path(f"Mesclado.pdf").open(mode='wb') as arquivo:
+                novo_arquivo.write(arquivo)
+
