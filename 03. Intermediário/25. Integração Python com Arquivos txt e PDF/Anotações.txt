@@ -237,3 +237,31 @@ AULA_12: Juntar e Mesclar PDFs
             with Path(f"Mesclado.pdf").open(mode='wb') as arquivo:
                 novo_arquivo.write(arquivo)
 
+
+AULA_13: Outras funcionalidades úteis em PDF
+
+    Inserir PDF no meio de outro.
+        pdf_mesclado.append('MGLU_ER_4T20_POR.pdf')
+        pdf_mesclado.merge(1, 'paginas/Pagina 1.pdf')
+
+    Rotacionar Paginas.
+        for pagina in arquivo_pdf_original.pages:
+            pagina.rotate(90)
+            novo_arquivo.add_page(pagina)
+
+
+AULA_14: Pegar texto e Encontrar informações em PDF
+
+    Buscar pagina de um trecho de texto:
+        texto_referencia = "| Despesas com Vendas"
+        for i, pagina in enumerate(arquivo.pages):
+            texto_pagina = pagina.extract_text()
+            if texto_referencia in texto_pagina:
+                print('Numero pagina: ', i+1)
+                texto_analisar = texto_pagina
+
+    Extrair informações do arquivo.
+        posicao_inicial = texto_analisar.find(texto_referencia)
+        posicao_final = texto_analisar.find("|", posicao_inicial + 1)
+        texto_final = texto_analisar[posicao_inicial:posicao_final]
+
