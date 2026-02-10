@@ -265,3 +265,44 @@ AULA_14: Pegar texto e Encontrar informações em PDF
         posicao_final = texto_analisar.find("|", posicao_inicial + 1)
         texto_final = texto_analisar[posicao_inicial:posicao_final]
 
+
+AULA_15: tabula - Lendo tabelas em PDF
+
+    Ler e tratar teblas de um PDF
+        tabelas = tabula.read_pdf('MGLU_ER_3T20_POR.pdf', pages=5, encoding='latin-1')
+        df_resultado = tabelas[0]
+
+        df_resultado = df_resultado.dropna(how='all', axis=0)
+        df_resultado = df_resultado.dropna(how='all', axis=1)
+
+        df_resultado.columns = df_resultado.iloc[0]
+        df_resultado = df_resultado.iloc[1:]
+        df_resultado = df_resultado.reset_index(drop=True)
+
+
+AULA_16: Forma alternativa de leitura de tabela e ajustes
+
+    Extraindo mais de uma tabela de uma pagina
+        for tabela in tabelas:
+            tabela = tabela.dropna(how='all', axis=0)
+            tabela = tabela.reset_index(drop=True)
+            display(tabela)
+
+    Leitura mais abrangente dos elementos da tabela
+        tabelas2 = tabula.read_pdf('MGLU_ER_3T20_POR.pdf', pages=12, lattice=True, encoding='latin-1')
+
+    Troca de cabeçalhos do DataFrame
+        colunas = df_capitalgrio2.iloc[0]
+        colunas = colunas.dropna()
+
+        df_capitalgrio.columns = colunas
+        display(df_capitalgrio)
+
+
+AULA_17: Extrair imagens de PDF
+
+    Extrair imgens de um PDF
+        for pagina in arquivo.pages:
+            for nome, imagem in pagina.images.items():
+                imagem_salvar = PdfImage(imagem)
+                imagem_salvar.extract_to(fileprefix=f"imagens/{nome}")
