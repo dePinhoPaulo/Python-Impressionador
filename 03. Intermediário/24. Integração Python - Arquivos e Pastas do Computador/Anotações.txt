@@ -1,0 +1,50 @@
+AULA_1: Python para Navegar no seu Computador - pathlib e shutil
+
+    Os módulos os e pathlib são uns dos melhores modulos para controlar as pastas e arquivos do seu computador.
+
+    Importando modulo:
+        from pathlib import Path
+
+    Listar Arquivos da pasta:
+        caminho = Path('Arquivos_Lojas')
+        arquivos = caminho.iterdir()
+        for arquivo in arquivos:
+            print(arquivo)
+    
+
+AULA_2: Verificando se um arquivo existe no Computador
+
+    Verificar se um arquivo existe na pasta:
+        if Path('Arquivos_Lojas/201801_Shopping Cdade_MG.csv').exists():
+            print('Existe')
+        else:
+            print('Não Existe')
+
+
+AULA_3: Criando Pastas e Movimentando Arquivos
+
+    Criar Pasta:
+        Path('Pasta Auxiliar').mkdir()
+    
+    Criar copia de um arquivo:  
+        arquivo_copiar = Path('Arquivos_Lojas/201801_Shopping Cidade_MG.csv')
+        arquivo_colar = Path('Pasta Auxiliar/201801_Shopping Cidade_MG__2.csv')
+        shutil.copy2(arquivo_copiar, arquivo_colar)
+
+    Mover arquivo:
+        shutil.move(arquivo_copiar, arquivo_colar)
+
+
+AULA_4: Explicação do Desafio Python e Arquivos
+
+    Explicação Desafio
+
+
+AULA_5: Solução do Desafio Python e Arquivos - Parte 1
+
+    Desafio OK
+
+
+AULA_6: Solução do Desafio Python e Arquivos - Parte 2
+
+    Desafio OK
