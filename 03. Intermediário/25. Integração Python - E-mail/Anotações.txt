@@ -1,0 +1,24 @@
+AULA_1: As 3 formas de enviar e-mails com códigos
+
+    SMTP;
+    Outlook;
+    Serviço tercerizados (Teillio, Postmart, Outros);
+
+    Emails em massa -> serviços tercerizados
+
+
+AULA_2: Como enviar e-mails com o Python - SMTPlib e Gmail
+
+    Construindo função que envia Emails: Enviar_Email.py
+
+
+AULA_3: Como enviar e-mails com imagem ou assinaturas
+
+    Incluir imagem de assinatura na função de envio.
+
+
+AULA_4: Como enviar e-mails SMTP com anexo
+
+    Adicionando envio de anexos no Email.
+        Enviar_Email_Anexo.py
+
