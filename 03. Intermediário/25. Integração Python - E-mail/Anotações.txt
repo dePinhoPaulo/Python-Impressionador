@@ -22,3 +22,10 @@ AULA_4: Como enviar e-mails SMTP com anexo
     Adicionando envio de anexos no Email.
         Enviar_Email_Anexo.py
 
+
+AULA_5: Como ler informações do email - imap tools
+
+    Conferir documentação: https://pypi.org/project/imap-tools/
+
+    Extrair informações do email:
+        Ler_infos_Email.py
