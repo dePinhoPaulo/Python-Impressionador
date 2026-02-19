@@ -55,3 +55,22 @@ AULA_9: Como enviar e-mail com conta secundária no outlook
 
     Alterar email de envio do outlook.
         enviar_email_outlook.py
+
+
+AULA_10: Como encontrar e-mails na sua caixa de entrada no outlook
+
+    Extrair informações do email no Outlook:
+        ler_email_outlook.py
+
+
+AULA_11: Como extrair anexos de e-mails no Outlook
+
+    Adicionando estrutura de salvar anexos dos Emails (Outlook):
+        ler_email_outlook.py
+
+
+AULA_12: Como enviar e-mail em massa com Python e Sendgrid Twillio
+
+    Envio de emails em massa utilizando biblioteca do Sendgrid:
+        envio_sendgrid.py
+
