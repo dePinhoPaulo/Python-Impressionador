@@ -29,3 +29,29 @@ AULA_5: Como ler informações do email - imap tools
 
     Extrair informações do email:
         Ler_infos_Email.py
+
+
+AULA_6: Como baixar informações de anexo dos e-mails
+
+    Extrair anexos de email:
+        Ler_infos_Email.py
+
+
+AULA_7: Como enviar e-mails com Python Outlook
+
+    Construindo função que envia Emails, usando SMTP do Outlook: 
+        enviar_email_outlook.py
+
+    Obs: Outlook ja tem que estar configurado com seu email do envio anteriormente.
+    
+
+AULA_8: E-mails outlook com imagem, assinatura e anexo
+
+    Incluir imagem de assinatura na função de envio e anexo.
+        enviar_email_outlook.py
+
+
+AULA_9: Como enviar e-mail com conta secundária no outlook
+
+    Alterar email de envio do outlook.
+        enviar_email_outlook.py
