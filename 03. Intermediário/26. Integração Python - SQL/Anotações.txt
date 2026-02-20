@@ -1,0 +1,50 @@
+AULA_1: Leia antes de começar
+
+    Nesse módulo além de aprender a integrar o Python diretamente com o SQL, também vamos mostrar a integração do pandas com o SQL, e como usar as consultas em SQL para tabelas do Python.
+    Sendo assim, é importante que você saiba sobre o pandas, porque ele vai ser muito usado nesse módulo. 
+
+
+AULA_2: Quando usar e como funciona
+
+    A integração do Python com o SQL permite que execute comandos SQL diretamente pelo Python no seu banco de dados. 
+    Isso vai permitir a gente pegar consultas e já importar elas para dentro de uma análise no Python automaticamente.
+
+
+AULA_3: pyodbc - configurações
+
+    Banco de dados utilizado nas aulas - sqliteodbc
+        Drive: http://www.ch-werner.de/sqliteodbc/
+
+    Database Browser (Facilitar a visualização dos dados)
+        Download: https://sqlitebrowser.org/about/
+
+
+AULA_4: Aviso Importante - Conexões com Banco de Dados
+
+    Sempre finalizar a conexão com o banco de dados no fim do script.
+    Caso não finalizado, acarretara em lock no banco:
+        Impossibilitando outras alterações no futuro.
+
+
+AULA_5: Passo a Passo do pyodbc
+
+    1º Configurações:
+        Instalaçãos dos Drivers;
+
+    2º Conexão:
+        modelo_conexao = ("Driver={Seu_Driver};Server=Seu_Servidor;Database=NomeBaseDeDados;UID=Login;PWD=Senha;");
+    
+    3º Manipulação:
+        Consultas/Update/Delete/Insert
+
+    4º finalizar Conexão:
+        cursor.close()
+        conexao.close()
+
+
+AULA_6: Create no Banco de Dados
+
+    INSERT no banco de dados:
+        Adicionar função de commit;
+        SEMPRE finalizar conexão.
+    
