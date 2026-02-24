@@ -48,3 +48,24 @@ AULA_6: Create no Banco de Dados
         Adicionar função de commit;
         SEMPRE finalizar conexão.
     
+
+AULA_7: Read no Banco de Dados
+
+    Utilizanado Pandas para construis DataFrames com Querys do banco de dados.
+
+        Extrair informações das colunas:
+            descricao = cursor.description
+
+
+AULA_9: Update no Banco de Dados
+
+    UPDATE no banco de dados:
+        Adicionar função de commit;
+        SEMPRE finalizar conexão.
+
+
+AULA_10: Delete no Banco de Dados
+
+    UPDATE no banco de dados:
+        Feichar SQLBrowser para excutar a commit;
+
