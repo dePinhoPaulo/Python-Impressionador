@@ -69,3 +69,16 @@ AULA_10: Delete no Banco de Dados
     UPDATE no banco de dados:
         Feichar SQLBrowser para excutar a commit;
 
+
+AULA_11: Exercicio 1 - Análise de Dados - Conectando com o Banco de Dados
+
+    Transformando tabela da query em um dataframe:
+        Com pyodbc e sqlite3
+
+
+AULA_12: Exercicio 1 - Análise de Dados - Construindo a Análise
+
+    Evolução do salário médio ao longo dos anos;
+    Funcionários tivemos ao longo dos anos;
+    Evolução do total gasto com salário ao longo dos anos;
+
