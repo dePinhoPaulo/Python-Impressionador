@@ -82,3 +82,31 @@ AULA_12: Exercicio 1 - Análise de Dados - Construindo a Análise
     Funcionários tivemos ao longo dos anos;
     Evolução do total gasto com salário ao longo dos anos;
 
+
+AULA_13: Exercicio 2 - CRUD - Controle de Estoque - Apresentação
+
+    Apresentação do projeto;
+    Download dos arquivos.
+    'Construit as operações SQL em um CRUD'
+
+
+AULA_14: Exercicio 2 - CRUD - Controle de Estoque - Conexão com o Banco
+
+    Conexão com banco de dados
+
+
+AULA_15: Exercicio 2 - CRUD - Controle de Estoque - Adicionando Insumo (CREATE)
+
+    Construção da função de INSERT.
+
+
+AULA_16: Exercicio 2 - CRUD - Controle de Estoque - Deletar Insumo (DELETE)
+
+    Construção da função de DELETE.
+        Com validação de dados
+
+AULA_17: Exercicio 2 - CRUD - Controle de Estoque - Consumir Insumo (UPDATE)
+
+    Construção da função de UPDATE.
+        Com validação de dados
+
