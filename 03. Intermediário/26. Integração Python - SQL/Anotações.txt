@@ -105,8 +105,23 @@ AULA_16: Exercicio 2 - CRUD - Controle de Estoque - Deletar Insumo (DELETE)
     Construção da função de DELETE.
         Com validação de dados
 
+
 AULA_17: Exercicio 2 - CRUD - Controle de Estoque - Consumir Insumo (UPDATE)
 
     Construção da função de UPDATE.
         Com validação de dados
+
+
+AULA_18: Exercicio 2 - CRUD - Controle de Estoque - Procurar Insumo (READ)
+
+    Construção da função de SELECT.
+        Com validação de dados
+
+
+AULA_19: CRUD no Python - Integração Python e MySQL19. CRUD no Python - Integração Python e MySQL
+
+    Projeto onde refaemos todas estapas do CRUD:
+        Criação de um BD simples no MySQL;
+        Operações de:   
+            READ, INSERT, UPDATE, DELETE.
 
