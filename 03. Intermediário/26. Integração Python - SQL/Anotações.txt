@@ -125,3 +125,18 @@ AULA_19: CRUD no Python - Integração Python e MySQL19. CRUD no Python - Integr
         Operações de:   
             READ, INSERT, UPDATE, DELETE.
 
+
+AULA_20: Disponibilizando um Minicurso de SQL
+
+    Comando basicos de SQL.
+        SELECT, INSERT INTO, UPDATE, DELETE;
+        WHERE, JOIN, ORDER BY;
+        CREATE TABLE, ALTER TABLE, DROP TABLE.
+
+
+AULA_21: SQLAlchemy - Como criar Banco de Dados usando apenas Python
+
+    "Melhor forma de integrar Banco de Dados com Python"
+        Utilizando linguagem de Pyhton pura;
+        Crinado banco de dados e Oerações.
+
