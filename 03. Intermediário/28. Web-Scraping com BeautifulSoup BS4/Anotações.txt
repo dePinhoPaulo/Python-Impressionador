@@ -1,0 +1,15 @@
+AULA_1: Como funciona o BeautifulSoup
+
+    Mais recomendado a paginas estaticas.
+    navegação nos dados html da pagina.
+
+
+AULA_2: Pegando Informações de Páginas HTML
+
+    buscar elementos do sit por tag:
+        titulo = site.find('title') 
+        print(titulo.text) 
+    
+    buscar lista de varios elementos:
+        links = barra.find_all('a')
+        print(links)
