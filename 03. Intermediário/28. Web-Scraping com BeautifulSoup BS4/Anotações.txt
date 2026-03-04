@@ -47,3 +47,24 @@ AULA_5: BeautifulSoup em sites reais - Criptomoedas
     Exercico OK:
         Bs4 em site.ipynb
 
+
+AULA_6: Tratando erros em raspagem de dados
+
+    Tratando erro de AttributeError, presente no codigo da aula passada;
+
+
+AULA_7: Outras técnicas de raspagem de dados
+
+    raspagem de dados tratando texto extraido da pagina:
+        for linha in linhas:
+            texto_linha = linha.get_text(separator=';')
+            lista_textos = texto_linha.split(';')
+            nome = lista_textos[1]
+            preco = lista_textos[3]
+            print(nome, preco)
+    
+
+AULA_8: Exercício - Miniprojeto de BeautifulSoup
+
+    Projeto OK:
+        Mini_Projeto.ipynb
