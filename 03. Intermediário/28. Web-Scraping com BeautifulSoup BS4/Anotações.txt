@@ -13,3 +13,37 @@ AULA_2: Pegando Informações de Páginas HTML
     buscar lista de varios elementos:
         links = barra.find_all('a')
         print(links)
+
+
+AULA_3: Regras para encontrar elemento no BeautifulSoup
+
+    Outras regras de find:
+        subtitulo = site.find(class_='tit')
+        cabecalho3 = site.find(role='banner', id='header')
+        logo = site.find('img', { 'class': "custom-logo lazyloaded", 'data-ll-status': "loaded"})
+
+    Busca por texto:
+        foco_mercado = site.find(string='Foco no Mercado')
+        
+        import re 
+        texto = site.find_all(string=re.compile('alunos'))
+
+
+AULA_4: Parents e Contents
+
+    "navegação para cima e para baixo"
+
+    Parents:
+        Mostra os elementos Pai;
+        Acima.
+
+    Contents:
+        Mostra os elementos Filho;
+        Abaixo.
+
+
+AULA_5: BeautifulSoup em sites reais - Criptomoedas
+
+    Exercico OK:
+        Bs4 em site.ipynb
+
