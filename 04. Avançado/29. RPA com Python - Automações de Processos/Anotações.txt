@@ -3,5 +3,15 @@ AULA_1: RPA com Python - Automatizando Processos e Sistemas
     Automatizando processo utilizando mouse e teclado;
     conferir documentação: https://pyautogui.readthedocs.io/en/latest/quickstart.html
 
+    # pyautogui.write() -> escreve
+    # pyautogui.click -> clica
+    # pyautogui.locateOnScreen -> identifica uma imagem na sua tela
+    # pyautogui.hotkey -> usa atalhos do teclado (combinação de teclas)
+    # pyautogui.press -> aperta um botão do teclado
+    # print(pyautogui.KEYBOARD_KEYS)
+
     Automação de extração de informações de um sistema e envio de um relatório por e-mail:
         Passo 1: Entrar no sistema (entrar no Gmail)
+        Passo 2: Entrar em uma aba específica do sistema onde tem o nosso relatório (Aba Contatos)
+        Passo 3: Exportar o Relatório (Exportar Contatos)
+        Passo 4: Pegar o relatório exportado, tratar e pegar as informações que queremos
