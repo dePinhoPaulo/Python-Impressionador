@@ -27,3 +27,6 @@ AULA_2: Mentoria - Automação de ERPs (Totvs, SAP e outros) com Python
 
     Automação de cadastro de produtos em um ERP:
         Passo 1 - Abrir Fakturama
+        Passo 2 - Clicar no menu
+        Passo 3 - Preencher todos campos
+        Passo 4 - Upload imagem
