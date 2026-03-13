@@ -1,0 +1,46 @@
+AULA_1: Leia antes de começar
+
+
+AULA_2: Apresentação do Projeto
+
+    Analisar investimentos:
+        Cotações de ativos;
+        Construir cartiera de ativos;
+        Perfomace desta carteira;
+        Comparativo do rendimento da carteira;
+        Analise de risco;
+        Analise tecnica com python;
+
+
+AULA_3: Instalações e Configurações
+
+    Documentações: 
+        yfinance: https://pypi.org/project/yfinance/
+        pandas: https://pandas.pydata.org/
+        numpy: https://numpy.org/
+        plotly: https://plotly.com/
+        nbformat: https://pypi.org/project/nbformat/
+
+
+AULA_4: Cotações dos últimos 12 meses
+
+    Verificar dados das ações do yfinance:
+        https://finance.yahoo.com/
+    
+    Estrutura base para obter da dados de uma ação:
+        yf.download(ticker, data_inicio, data_fim)
+
+
+AULA_5: Obter cotações e Explicações sobre funcionamento do Mercado Financeiro
+
+    Manipulado datas com datetime:
+        data_inicio = datetime.now() - timedelta(days=365)
+        data_inicio = data_inicio.strftime('%Y-%m-%d')
+        data_fim = datetime.now().strftime('%Y-%m-%d')
+
+    Contruindo um função para obter dados de varias ações:
+        def pegar_cotacoes(lista_tickers, data_inicio, data_fim):
+            df = yf.download(lista_tickers, data_inicio, data_fim)
+            df = df.ffill()
+            return df
+
