@@ -30,3 +30,6 @@ AULA_2: Mentoria - Automação de ERPs (Totvs, SAP e outros) com Python
         Passo 2 - Clicar no menu
         Passo 3 - Preencher todos campos
         Passo 4 - Upload imagem
+        Passo 5 - Salvar Cadastro
+        Passo 6 - Integar preenchimento com planilha no Excel
+        Passo 7 - Mostrar cacteres com Acento
