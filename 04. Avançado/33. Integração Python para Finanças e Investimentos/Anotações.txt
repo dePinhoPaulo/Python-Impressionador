@@ -44,3 +44,31 @@ AULA_5: Obter cotações e Explicações sobre funcionamento do Mercado Financei
             df = df.ffill()
             return df
 
+
+AULA_6: Construindo uma carteira de ativos
+
+    Dataframe com valor investido de cada ação, a partir de um dicionario:
+        for ativo in dic_carteira:
+            preco_incial = df_cotacoes[ativo].iloc[0]
+            qtde_acoes = dic_carteira[ativo] / preco_incial
+            df_carteira[ativo] = df_cotacoes[ativo] * qtde_acoes
+        
+
+AULA_7: Cálculo de retorno de ativos
+
+    Função de calculo de rentabilidade da carteira:
+        def calcular_rentabilidade(df):
+            retorno = df.iloc[-1] / df.iloc[0] - 1
+            return retorno
+
+
+AULA_8: Escolhendo e Ajustando benchmarks
+
+    Convertendo ações em dolar para real:
+        df_cotacoes['SP500 (R$)'] = df_cotacoes['^GSPC'] * df_cotacoes['BRL=X']
+        df_cotacoes['OURO (R$)'] = df_cotacoes['GC=F'] * df_cotacoes['BRL=X']
+
+    Dataframe de comparação de Carteira com Indices:
+        df_comparacao = df_cotacoes.drop(columns=acoes)
+        df_comparacao['Carteira'] = df_carteira['Total']
+    
