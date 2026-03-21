@@ -72,3 +72,34 @@ AULA_8: Escolhendo e Ajustando benchmarks
         df_comparacao = df_cotacoes.drop(columns=acoes)
         df_comparacao['Carteira'] = df_carteira['Total']
     
+
+AULA_9: Gráfico de rentabilidade diária da carteira
+
+    DataFrame de evolução da valorização:
+        df_comparacao = df_comparacao / df_comparacao.iloc[0] - 1
+
+    Graficos com plotly:
+        import plotly.express as px
+        grafico = px.line(df_comparacao, x=df_comparacao.index, y=df_comparacao.columns)
+        grafico.update_layout(template='plotly_dark')
+        grafico.show()
+
+
+AULA_10: Análise de Risco - Matriz de correlação
+
+    Rentabilidade diaria dos ativos, calculo de logatimo e tabela de correlação:
+        tabela_rentabilidade_diaria = df_cotacoes / df_cotacoes.shift(1) # Shift(1) faz referencia a linha anterior
+        tabela_rentabilidade_diaria = np.log(tabela_rentabilidade_diaria).dropna()
+        tabela_correlacao = tabela_rentabilidade_diaria.corr()
+
+    Gráfico de correlação:  
+        grafico_correlacao = px.imshow(df_cotacoes.corr(), text_auto=True, color_continuous_scale='greens') 
+        grafico_correlacao.update_layout(template='plotly_dark') #modo dark
+        grafico_correlacao.show()
+
+
+AULA_11: Análise de Risco - Volatilidade da Carteira
+
+    Fórmula da Volatividade:
+        tabela_volatilidade = tabela_rentabilidade_diaria.std() * np.sqrt(252) # variancia ao quadrado * dias uteis ao quadrado
+        display(tabela_volatilidade)
