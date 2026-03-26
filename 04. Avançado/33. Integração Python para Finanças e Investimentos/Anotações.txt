@@ -103,3 +103,24 @@ AULA_11: Análise de Risco - Volatilidade da Carteira
     Fórmula da Volatividade:
         tabela_volatilidade = tabela_rentabilidade_diaria.std() * np.sqrt(252) # variancia ao quadrado * dias uteis ao quadrado
         display(tabela_volatilidade)
+
+
+AULA_12: Gráfico de Candlestick
+
+    Para criar grafico com vairos elemento:
+        import plotly.graph_objects as go
+
+        grafico = go.Figure()
+        grafico.add_trace(go.Candlestick(x=df.index, open=df['Open'], close=df['Close'], high=df['High'], low=df['Low']))
+        grafico.update_layout(template='plotly_dark') 
+        grafico.show()
+
+
+AULA_13: Análise Técnica: Média Móvel de 50 e 200 dias
+
+    Calculo da Media movel:
+        df['MM200'] = df['Close'].rolling(200).mean()
+
+    Adicionando Grafico de linha na figura:
+        grafico.add_trace(go.Scatter(x=df.index, y=df['MM50'], name='MM50', line={'color': 'blue', 'width': 1}))
+
