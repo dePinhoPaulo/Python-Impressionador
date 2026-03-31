@@ -1,0 +1,56 @@
+AULA_01: O que é um Ambiente Virtual
+
+    Usar ferramentas que funcionam apenas com versões específicas do Python
+    Isolar de todo o resto tudo aquilo que é estritamente necessário para o programa rodar. 
+    Importante para sites e programas que vão ser distribuídos
+
+
+AULA_02: Navegando no Prompt de Comando
+
+    cd "Caminho" -> navega até aquela pasta
+    cd .. -> volta para a pasta anterior
+    dir -> lista os arquivos contidos na pasta
+
+    Anaconda Prompt
+
+
+AULA_03: Criando, Ativando e Removendo Ambientes Virtuais
+
+    Documentação: https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
+
+    Criar Ambiente virtual com versão especifica:
+        conda create -n meuambientevirtual python=3.6
+    
+    Remover ambiente virtual:
+        conda remove --name meuambientevirtual --all
+
+    Ativar ambiente:
+        conda activate meuambientevirtual
+
+    Desativar ambiente:
+        conda deactivate
+
+
+AULA_04: Observações Importantes de Ambientes Virtuais
+
+    Quando você cria um ambiente virtual, ele vem praticamente sem nada, 
+    então você precisa usar o pip ou o conda para instalar cada pacote que for usar
+
+
+AULA_05: Ambientes Virtuais no PyCharm
+
+    No PyCharm ao criar um novo projeto ele já sujere a criação de um novo ambiente.
+        Pasta venv
+    
+    Para instalar novas bibliotecas no ambiente:
+        Abrir terminal na pasta venv.
+    
+
+AULA_06: Ambientes Virtuais no VSCode
+
+    Ctrl + Shift + P ;
+    Python create environments;
+    venv;
+    Versão do pyhton;
+    Abrir Command Prompt para entrar no ambiente;
+
