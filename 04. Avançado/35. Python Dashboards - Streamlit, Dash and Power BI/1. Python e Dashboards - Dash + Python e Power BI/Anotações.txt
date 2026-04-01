@@ -1,0 +1,30 @@
+AULA_02: Como funciona a Integração de Python com o Power BI
+
+    1 - Como fonte de Dados
+    2 - Para editar uma tabela no Editor de Consultas (Power Query)
+    3 - Para criar um visual
+
+
+AULA_03: Configurações Importantes - Python e Power BI
+
+    Criar ambiente virtual para projetos com Python:
+        ambiente: pythonpowerbi
+        bibliotecas intalas: jupyter, pandas, matplotlib
+
+    Power Bi:
+        Configurações > Scripts do Python:
+            Diretorio base do Python: Caminho do ambiente virtual
+    
+        Obter dados:
+            Script Python:
+                import pandas as pd
+                vendas_df = pd.read_csv(r'C:\Users\Kiko\Documents\Projetos Programação\Python-Impressionador\04. Avançado\35. Python Dashboards - Streamlit, Dash and Power BI\1. Python e Dashboards - Dash + Python e Power BI\Integração de Python com o Power BI\Contoso - Vendas - 2017 (1).csv', sep=';')
+        
+
+AULA_04: Usando o Python para gerar Base de Dados no Power BI
+
+    Importar e tratar a base com Python (jupyter notebook);
+    Levar o scrit para Power Bi.
+
+    "No power BI, não utilizar display() para ver o Dataframes"
+
