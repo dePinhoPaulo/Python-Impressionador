@@ -28,3 +28,26 @@ AULA_04: Usando o Python para gerar Base de Dados no Power BI
 
     "No power BI, não utilizar display() para ver o Dataframes"
 
+
+AULA_05: Usando o Python para Editar Tabelas do Power BI
+
+    Power Query:
+        Transformar > Executar Script em Python;
+        "Sempre executar codigos no jupyter antes!"
+    
+    Filtrando lojas no dataset de vendas:
+        dataset = vendas_df # No Power bi ja reconhece como dataset, não precisa desta linha
+        tres_lojas_df = dataset[dataset['ID Loja'].isin([86, 306, 172])]
+
+
+AULA_06: Usando Python para criar Gráficos no Power BI
+
+    Power Bi:
+        Inserir visual em Python:
+            Adicionar colunas nos valores do visual;
+
+            import matplotlib.pyplot as plt
+            dataset.plot(x='Data da Venda', y='Quantidade Vendida', figsize=(15, 5))
+            plt.show()
+
+            "Sempres se atentar aos campo adicionado nos valores do visual"
