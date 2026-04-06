@@ -51,3 +51,22 @@ AULA_06: Usando Python para criar Gráficos no Power BI
             plt.show()
 
             "Sempres se atentar aos campo adicionado nos valores do visual"
+
+
+AULA_07: Gráficos Seaborn no Power BI
+
+    Temos 2 bibliotecas muito usadas no Python para gráficos, além da matplotlib que já conhecemos:
+        Plotly - Documentação:
+        Seaborn - Documentação:
+
+        Gráficos com Seaborn e Plotly:
+            sns.set_theme(style='darkgrid')
+            fig, ax = plt.subplots(figsize=(15, 5))   # ajuste de tamanho do grafico
+            ax.xaxis.set_major_locator(plt.MaxNLocator(12))   # ajuste de quantidade de elementos na legenda
+            sns.lineplot(x='Data da Venda', y='Quantidade Vendida', hue='Nome da Loja', data=tres_lojas_df, ax=ax)
+            plt.show()
+
+        Power Bi:
+            Novo visual - R e Pyhton;
+            Colar codigo, (Usando Dataframe do Bi 'dataset')
+
