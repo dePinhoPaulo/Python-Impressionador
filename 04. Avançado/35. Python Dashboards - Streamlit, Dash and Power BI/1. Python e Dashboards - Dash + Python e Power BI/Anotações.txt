@@ -70,3 +70,27 @@ AULA_07: Gráficos Seaborn no Power BI
             Novo visual - R e Pyhton;
             Colar codigo, (Usando Dataframe do Bi 'dataset')
 
+
+AULA_08: Mentoria - Dashboards com Dash e Plotly
+
+    Dash - biblioteca para Paineis criação de paineis na web;
+        https://dash.plotly.com/
+    Plotly - biblioteca de Graficos;
+    Flask - biblioteca de desenvolvimento web;
+
+    Como funcionao Dash:
+        Layout (visualização):
+            HTML
+            Dash Components
+        Callbacks (logica por tras)
+
+    Intração do plotly com dataframe no pandas:
+        df = pd.read_excel('Vendas.xlsx')   # Dataframe de Vendas
+        fig = px.bar(df, x="Produto", y="Quantidade", color="ID Loja", barmode="group")
+
+    Exibir Grafico na tela:
+        dcc.Graph(
+            id='example-graph',
+            figure=fig
+        )
+
