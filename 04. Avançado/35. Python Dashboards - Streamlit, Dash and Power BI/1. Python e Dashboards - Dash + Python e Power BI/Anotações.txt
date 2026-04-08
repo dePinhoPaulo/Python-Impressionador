@@ -94,3 +94,14 @@ AULA_08: Mentoria - Dashboards com Dash e Plotly
             figure=fig
         )
 
+    Tiulo do grafico na função de layout:
+        html.H2(children='Vendas de cada Produto por Loja'),
+    
+    "Todo estilo da pagina é editado atraves do css"
+        html.H1(children='Hello Dash', style={'text-align': 'center'}),
+    
+    adicionando mais graficos a pagina:
+        fig2 = px.scatter(df, x="Quantidade", y="Valor Final", color="Produto", size="Valor Unitário", size_max=60)
+        app.layout:
+            dcc.Graph(id='grafico2',figure=fig2),
+
