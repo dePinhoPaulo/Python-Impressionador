@@ -105,3 +105,14 @@ AULA_08: Mentoria - Dashboards com Dash e Plotly
         app.layout:
             dcc.Graph(id='grafico2',figure=fig2),
 
+    Inserindo botões com Callbacks e mudando titulo H2 (estrutura padrão):
+        @app.callback(
+            Output('sub_titulo', 'children'), # quem eu quero modificar
+            Input('selecao_marcas', 'value') # De onde quero pegar a informação
+        )
+        def selecionar_marca(marca):
+            if marca == 'Todas':
+                texto = 'Vendas de cada produto por loja'
+            else:
+                texto = f'Vendas de cada produto por loja {marca}'
+            return texto
