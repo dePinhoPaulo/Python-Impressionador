@@ -116,3 +116,29 @@ AULA_08: Mentoria - Dashboards com Dash e Plotly
             else:
                 texto = f'Vendas de cada produto por loja {marca}'
             return texto
+
+        Autenticação basica do Dash:
+            import dash_auth
+            USUARIOS = {
+                "Paulo": "12345"
+            }
+            auth = dash_auth.BasicAuth(app, USUARIOS)
+
+        Estrutura de callback, para filtrar os graficos:
+            @app.callback(
+                Output('sub_titulo', 'children'), # quem eu quero modificar
+                Output('vendas_por_loja', 'figure'),
+                Output('grafico2', 'figure'),
+                Input('selecao_marcas', 'value') # De onde quero pegar a informação
+            )
+            def selecionar_marca(marca):
+                if marca == 'Todas':
+                    texto = 'Vendas de cada produto por loja'
+                    fig = px.bar(df, x="Produto", y="Quantidade", color="ID Loja", barmode="group")
+                    fig2 = px.scatter(df, x="Quantidade", y="Valor Final", color="Produto", size="Valor Unitário", size_max=60)
+                else:
+                    df_filtrado = df.loc[df['Marca']==marca, :  ]
+                    texto = f'Vendas de cada produto por loja {marca}'
+                    fig = px.bar(df_filtrado, x="Produto", y="Quantidade", color="ID Loja", barmode="group")
+                    fig2 = px.scatter(df_filtrado, x="Quantidade", y="Valor Final", color="Produto", size="Valor Unitário", size_max=60)
+                return texto, fig, fig2
