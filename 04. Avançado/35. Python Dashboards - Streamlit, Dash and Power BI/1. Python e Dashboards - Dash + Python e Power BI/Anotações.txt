@@ -142,3 +142,26 @@ AULA_08: Mentoria - Dashboards com Dash e Plotly
                     fig = px.bar(df_filtrado, x="Produto", y="Quantidade", color="ID Loja", barmode="group")
                     fig2 = px.scatter(df_filtrado, x="Quantidade", y="Valor Final", color="Produto", size="Valor Unitário", size_max=60)
                 return texto, fig, fig2
+        
+        2 Botões editando o mesmo gráfico:
+            Adicionar Input no callback:
+                Input('selecao_paises', 'value')
+            Adicionar condição na função:
+                if marca == 'Todas' and pais == 'Todas':
+                texto = 'Vendas de cada produto por loja'
+                fig = px.bar(df, x="Produto", y="Quantidade", color="ID Loja", barmode="group")
+                fig2 = px.scatter(df, x="Quantidade", y="Valor Final", color="Produto", size="Valor Unitário", size_max=60)
+
+            else:
+                df_filtrado = df
+                if marca != 'Todas':
+                    df_filtrado = df_filtrado.loc[df['Marca']==marca, :  ]
+                if pais != 'Todas':
+                    df_filtrado = df_filtrado.loc[df['País']==pais, :  ]
+
+        Edição de estilo especificos nos elementos da pagina:                
+            html.Div(children=[
+                dcc.RadioItems(lista_marcas, value='Todas', id='selecao_marcas'),
+                dcc.Dropdown(lista_paises, value='Todas', id='selecao_paises'),
+            ], style={'text-align': 'center', 'width': '50%', 'margin': 'auto'}),
+            "adicionar elementos em uma nova Div"
