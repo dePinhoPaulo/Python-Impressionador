@@ -181,3 +181,25 @@ AULA_08: Mentoria - Dashboards com Dash e Plotly
                 nova_lista_paises.append('Todas')
             return nova_lista_paises
         "Retorna opções no DropDown apenas com valores maior que 0"
+
+
+AULA_09: Formas de Autenticação do Dash
+
+    Autenticação free:
+        Login e senha simples;
+
+
+AULA_10: Criacao de um Dashboard Simples para o Exemplo
+
+    Criando painel simples para utilizarautenticação.
+
+
+AULA_11: Basic Auth
+
+    Estrutura simples:
+        autenticador = dash_auth.BasicAuth(
+            app,
+            {'user1': 'senha1',
+            'user2': 'senha2'}
+        )
+
