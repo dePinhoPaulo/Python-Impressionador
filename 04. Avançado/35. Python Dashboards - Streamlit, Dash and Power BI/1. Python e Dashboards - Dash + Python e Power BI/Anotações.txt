@@ -225,3 +225,17 @@ AULA_13: Arquivo init
         login_manager = LoginManager(server)
         login_manager.login_view = "/login"
 
+
+AULA_14: Criando o banco de dados
+
+    Criando e configurando modelos do banco de dados:
+        @login_manager.user_loader
+        def load_usuario(id_usuario):
+            usuario = Usuario.query.get(int(id_usuario))
+            return usuario
+
+        class Usuario(database.Model, UserMixin):
+            id = database.Column(database.Integer, primary_key=True)
+            email = database.Column(database.String, nullable=False, unique=True)
+            senha = database.Column(database.String, nullable=False)
+
