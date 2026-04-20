@@ -239,3 +239,36 @@ AULA_14: Criando o banco de dados
             email = database.Column(database.String, nullable=False, unique=True)
             senha = database.Column(database.String, nullable=False)
 
+
+AULA_15: Multiplas Páginas no Dashboard
+
+    Criando nova rota no site:
+        @server.route("/nova_tela")
+        def nova_tela():
+            return "Você está na página criada pelo Flask"
+    
+
+AULA_16: Criando as telas de autenticação
+
+    layout_homepage = html.Div([
+        dcc.Location(id="homepage_url", refresh=True),
+        html.H2("Criar conta"),
+        html.Div([
+            dcc.Input(id="email", type="email", placeholder="Seu e-mail"),
+            dcc.Input(id="senha", type="password", placeholder="Sua senha"),
+            html.Button("Criar conta", id="botao-criarconta"),
+            dcc.Link("Já tem uma conta? Faça seu login aqui", "/login")
+        ], className="form-column")
+    ])
+
+    layout_login = html.Div([
+        dcc.Location(id="login_url", refresh=True),
+        html.H2("Faça seu Login"),
+        html.Div([
+            dcc.Input(id="email", type="email", placeholder="Seu e-mail"),
+            dcc.Input(id="senha", type="password", placeholder="Sua senha"),
+            html.Button("Faça Login", id="botao-login"),
+            dcc.Link("Não tem uma conta? Crie aqui", "/")
+        ], className="form-column")
+    ])
+
