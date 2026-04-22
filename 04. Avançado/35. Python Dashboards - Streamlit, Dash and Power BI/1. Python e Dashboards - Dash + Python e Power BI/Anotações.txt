@@ -272,3 +272,62 @@ AULA_16: Criando as telas de autenticação
         ], className="form-column")
     ])
 
+
+AULA_17: Callbacks de Usuários
+
+    @app.callback(Output("homepage_url", "pathname"), Input("botao-criarconta", "n_clicks"), 
+              [State("email", "value"), State("senha", "value")])
+    def criar_conta(n_clicks, email, senha):
+        if n_clicks:
+            # vou criar a conta
+            # verificar se já existe um usuário com essa conta
+            usuario  = Usuario.query.filter_by(email=email).first() # finalizar
+            if usuario:
+                return "/login"
+            else:
+                # criar o usuario
+                senha_criptografada = bcrypt.generate_password_hash(senha).decode("utf-8")
+                usuario = Usuario(email=email, senha=senha_criptografada) # 123456
+                database.session.add(usuario)
+                database.session.commit()
+                login_user(usuario)
+                return "/dashboard"
+
+
+AULA_18: Finalização da Autenticação de Dashboard
+
+    @app.callback(Output("login_url", "pathname"), Input("botao-login", "n_clicks"), 
+              [State("email", "value"), State("senha", "value")])
+    def criar_conta(n_clicks, email, senha):
+        if n_clicks:
+            # vou criar a conta
+            # verificar se já existe um usuário com essa conta
+            usuario  = Usuario.query.filter_by(email=email).first() # finalizar
+            if not usuario:
+                return "/"
+            else:
+                # criar o usuario
+                if bcrypt.check_password_hash(usuario.senha.encode("utf-8"), senha):
+                    login_user(usuario)
+                    return "/dashboard"
+                else:
+                    return "/erro"
+    
+    @app.callback(Output("conteudo_pagina", "children"), Input("url", "pathname"))
+    def carregar_pagina(pathname):
+        if pathname == "/":
+            return layout_homepage
+        elif pathname == "/dashboard":
+            if current_user.is_authenticated:
+                return layout_dashboard
+            else:
+                return dcc.Link("Usuario não autenticado, faça login aqui", "/login")
+        elif pathname == "/login":
+            return layout_login
+        elif pathname == "/erro":
+            return layout_erro
+        elif pathname == "/logout":
+            if current_user.is_authenticated:
+                logout_user()
+            return layout_login
+
