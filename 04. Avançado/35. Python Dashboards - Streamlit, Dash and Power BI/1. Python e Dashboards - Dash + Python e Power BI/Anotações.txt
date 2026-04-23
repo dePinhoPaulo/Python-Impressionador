@@ -331,3 +331,24 @@ AULA_18: Finalização da Autenticação de Dashboard
                 logout_user()
             return layout_login
 
+
+AULA_19: Mentoria Integração Jupyter com Power BI
+
+    Nova Integração -> Power BI dentro do Jupyter
+
+    Instalar a biblioteca powerbiclient:
+        %pip install powerbiclient
+
+    Importar Report e models, Autenticação
+    
+    Realizar a Autenticação
+        device_auth = DeviceCodeLoginAuthentication()
+        Logar na sua conta atraves do link gerado
+
+    Group_ID e Report_id
+        Relatório Ja publicado
+        group_id = "XXXX"
+        report_id = "XXXX"
+
+    Carregar o relatório como group_id e o report_id
+        Pegar essas informações do link do Power BI
