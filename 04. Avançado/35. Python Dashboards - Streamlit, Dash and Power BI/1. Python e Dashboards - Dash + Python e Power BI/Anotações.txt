@@ -336,19 +336,35 @@ AULA_19: Mentoria Integração Jupyter com Power BI
 
     Nova Integração -> Power BI dentro do Jupyter
 
-    Instalar a biblioteca powerbiclient:
-        %pip install powerbiclient
+        Instalar a biblioteca powerbiclient:
+            %pip install powerbiclient
 
-    Importar Report e models, Autenticação
+        Importar Report e models, Autenticação
+        
+        Realizar a Autenticação
+            device_auth = DeviceCodeLoginAuthentication()
+            Logar na sua conta atraves do link gerado
+
+        Group_ID e Report_id
+            Relatório Ja publicado
+            group_id = "XXXX"
+            report_id = "XXXX"
+
+        Carregar o relatório como group_id e o report_id
+            Pegar essas informações do link do Power BI
+            relatorio = Report(group_id=group_id, report_id=report_id, auth=autenticacao)
+
+        Mostar relatorio:
+            relatorio
     
-    Realizar a Autenticação
-        device_auth = DeviceCodeLoginAuthentication()
-        Logar na sua conta atraves do link gerado
+    Interagir com relatorio:
 
-    Group_ID e Report_id
-        Relatório Ja publicado
-        group_id = "XXXX"
-        report_id = "XXXX"
+        Mostrar lista de paginas do relatorio:
+            paginas = relatorio.get_pages()
+            for pagina in paginas:
+                print(pagina)
 
-    Carregar o relatório como group_id e o report_id
-        Pegar essas informações do link do Power BI
+        Mostrar lista de gaficos:
+            graficos = relatorio.visuals_on_page(relatorio_vendas['name'])
+            for grafico in graficos:
+                print(grafico)
