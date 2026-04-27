@@ -368,3 +368,15 @@ AULA_19: Mentoria Integração Jupyter com Power BI
             graficos = relatorio.visuals_on_page(relatorio_vendas['name'])
             for grafico in graficos:
                 print(grafico)
+
+        Trazer dados de um gráfico:
+            infos_grafico = relatorio.export_visual_data(relatorio_vendas['name'], grafico_area['name'], rows=100)
+            print(infos_grafico)
+
+        Trnasformar informações do grafico em Dataframe:
+            import pandas as pd
+            from io import StringIO
+            tabela = pd.read_csv(StringIO(infos_grafico))
+            display(tabela)
+
+        
