@@ -379,4 +379,16 @@ AULA_19: Mentoria Integração Jupyter com Power BI
             tabela = pd.read_csv(StringIO(infos_grafico))
             display(tabela)
 
-        
+        Trabalhando com filtros:
+            def filter_report(Anos):
+                anos_filter = {
+                    '$schema': "http://powerbi.com/product/schema#basic",
+                    'target': {
+                        'table': "Calendário",
+                        'column': "Ano"
+                    },
+                    'operator': "In",
+                    'values': [Anos]
+                }
+                relatorio.remove_filters()
+                relatorio.update_filters([anos_filter])
