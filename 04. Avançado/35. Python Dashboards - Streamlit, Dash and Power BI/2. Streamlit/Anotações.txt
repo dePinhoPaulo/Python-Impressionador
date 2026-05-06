@@ -20,4 +20,21 @@ AULA_1: Como funciona criar apps e sites com o Streamlit
             precos_acao = precos_acao[["Close"]]
             return precos_acao
         dados  = carregar_dados("ITUB4.SA")
+    
+    Alteração do tema (Dark):
+        config.toml
+            [theme]
+            base="dark"
 
+    Consultando varias ações:
+        def carregar_dados(empresas):
+            dados_acao = yf.Tickers(empresas)
+            precos_acao = dados_acao.history(period='1d', start='2015-01-01', end='2024-07-01')
+            precos_acao = precos_acao["Close"]
+            return precos_acao
+        dados  = carregar_dados("ITUB4.SA BBAS3.SA VALE3.SA ABEV3.SA MGLU3.SA PETR4.SA GGBR4.SA")
+
+    Filtro de varias seleções:
+        lista_acoes = st.multiselect("Escolha as ações para exibir no gráfico", dados.columns)
+    
+    
