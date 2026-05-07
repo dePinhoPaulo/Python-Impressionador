@@ -20,6 +20,9 @@ AULA_1: Como funciona criar apps e sites com o Streamlit
             precos_acao = precos_acao[["Close"]]
             return precos_acao
         dados  = carregar_dados("ITUB4.SA")
+
+
+AULA_2: Filtros e Gráficos
     
     Alteração do tema (Dark):
         config.toml
@@ -37,4 +40,15 @@ AULA_1: Como funciona criar apps e sites com o Streamlit
     Filtro de varias seleções:
         lista_acoes = st.multiselect("Escolha as ações para exibir no gráfico", dados.columns)
     
-    
+
+AULA_3: Sidebar, Datas e Sliders
+
+    Filtros Sidebar:
+        barra_lateral = st.sidebar.header("Filtros")
+        lista_acoes = st.sidebar.multiselect("Escolha as ações para exibir no gráfico", dados.columns)
+        data_inicial = dados.index.min().to_pydatetime()
+        data_final = dados.index.max().to_pydatetime()
+        intervalo_datas = st.sidebar.slider("Selecione o período", 
+                                            min_value=data_inicial, 
+                                            max_value=data_final, value=(data_inicial, data_final), step=timedelta(days=1))
+
