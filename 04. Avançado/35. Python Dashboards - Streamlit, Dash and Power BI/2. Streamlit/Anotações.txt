@@ -52,3 +52,8 @@ AULA_3: Sidebar, Datas e Sliders
                                             min_value=data_inicial, 
                                             max_value=data_final, value=(data_inicial, data_final), step=timedelta(days=1))
 
+
+AULA_4: Dashboard Completo de Corretora de Ações
+
+    Adicionando Desempenho do ativo;
+    Adicionando performance por carteira;
