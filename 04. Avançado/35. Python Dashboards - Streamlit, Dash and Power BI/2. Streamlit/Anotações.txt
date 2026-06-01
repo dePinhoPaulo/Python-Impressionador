@@ -58,20 +58,3 @@ AULA_4: Dashboard Completo de Corretora de Ações
     Adicionando Desempenho do ativo;
     Adicionando performance por carteira;
 
-
-AULA_1: Apresentação do Projeto
-
-    Sistema de visualização dos relatorios, com autentificação.
-
-
-AULA_2: Instalando tudo o que vamos precisar no Projeto
-
-    Ambiente virtual:
-        Command pallets;
-        Create Enviroments;
-        Venv;
-        Selecionar versão.
-
-    Instalando todas bibliotecas de outro Projeto:
-        Install requeriments.txt;
-

@@ -1,0 +1,54 @@
+AULA_1: Apresentação do Projeto
+
+    Sistema de visualização dos relatorios, com autentificação.
+
+
+AULA_2: Instalando tudo o que vamos precisar no Projeto
+
+    Ambiente virtual:
+        Command pallets;
+        Create Enviroments;
+        Venv;
+        Selecionar versão.
+
+    Instalando todas bibliotecas de outro Projeto:
+        Install requeriments.txt;
+
+
+AULA_3: Criação do Projeto e da primeira página
+
+    bibliotecas:
+        streamlit
+        pandas
+
+    Função para mostra base e deixar salvo em cache:
+        @st.cache_data
+        def carregar_dados():
+            tabela = pd.read_excel("Base.xlsx")
+            return tabela
+
+
+AULA_4: Sistema de Autenticação Streamlit Authenticator
+
+    Biblioteca: 
+        streamlit_authenticator
+
+    Criptografar senhas:
+        senhas_criptografadas = stauth.Hasher(["123456", "123123", "333333"]).generate()
+
+    Estrtura de autenticação:
+        authenticator = stauth.Authenticate(credenciais, "credenciais_hashco", "fsyfus%$67fs76AH7", cookie_expiry_days=30)
+        def autenticar_usuario(authenticator):
+            nome, status_autenticacao, username = authenticator.login()
+            if status_autenticacao:
+                return {"nome": nome, "username": username}
+            elif status_autenticacao == False:
+                st.error("Combinação de usuário e senha inválidas")
+            else:
+                st.error("Preencha o formulário para fazer login")
+
+    Autenticar o usuario
+        dados_usuario = autenticar_usuario(authenticator)
+        if dados_usuario:
+            #resto do codigo
+
