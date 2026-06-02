@@ -52,3 +52,35 @@ AULA_4: Sistema de Autenticação Streamlit Authenticator
         if dados_usuario:
             #resto do codigo
 
+
+AULA_5: Multipáginas - Criando um aplicativo com várias páginas
+
+    Separando o site em varias paginas:
+        pg = st.navigation(
+            {
+            "Home": [st.Page("homepage.py", title="Hash&Co")],
+            "Dashboards": [st.Page("dashboard.py", title="Dashboard"), st.Page("indicadores.py", title="Indicadores")],
+            "Conta": [st.Page(logout, title="Sair"), st.Page("criar_conta.py", title="Criar Conta")]
+            }
+        )
+
+
+AULA_6: Criando o banco de dados para nosso sistema
+
+    Conectar banco de dados (sqlite):
+        
+        Criar modelo de usuario:
+            class Usuario(Base):
+                __tablename__ = "usuarios"
+                id = Column("id", Integer, primary_key=True, autoincrement=True)
+                nome = Column("nome", String)
+                senha = Column("senha", String)
+                email = Column("email", String)
+                admin = Column("admin", Boolean)
+
+                def __init__(self, nome, senha, email, admin=False):
+                    self.nome = nome
+                    self.senha = senha
+                    self.email = email
+                    self.admin = admin
+

@@ -22,7 +22,7 @@ def autenticar_usuario(authenticator):
     else:
         st.error("Preencha o formulário para fazer login")
 
-def logout(authenticator):
+def logout():
     authenticator.logout()
 
 
@@ -37,6 +37,12 @@ if dados_usuario:
 
     base = carregar_dados()
 
-    st.title("Hash&Co")
-    st.write("Bem vindo, Fulano")
-    st.table(base.head(10))
+    pg = st.navigation(
+        {
+         "Home": [st.Page("homepage.py", title="Hash&Co")],
+         "Dashboards": [st.Page("dashboard.py", title="Dashboard"), st.Page("indicadores.py", title="Indicadores")],
+         "Conta": [st.Page(logout, title="Sair"), st.Page("criar_conta.py", title="Criar Conta")]
+         }
+    )
+
+    pg.run()
