@@ -84,3 +84,23 @@ AULA_6: Criando o banco de dados para nosso sistema
                     self.email = email
                     self.admin = admin
 
+
+AULA_7: Adicionando um usuários no Banco de Dados
+
+    Criando primeiro usuario admin:
+        senha_criptografada = stauth.Hasher(["123123"]).generate()[0]
+        usuario = Usuario(nome="Lira", senha=senha_criptografada, email="lira@gmail.com", admin=True)
+        session.add(usuario)
+        session.commit()
+
+
+AULA_8: Conectando a autenticação com o Banco de Dados
+
+    Ajuste das credenciais:
+        credenciais = {"usernames": {
+            usuario.email: {"name": usuario.nome, "password": usuario.senha} for usuario in lista_usuarios
+        }}
+
+    Consulta de usuarios:
+        lista_usuarios = session.query(Usuario).all()
+

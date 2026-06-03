@@ -1,13 +1,12 @@
 import streamlit as st
 import pandas as pd
 import streamlit_authenticator as stauth
+from models import session, Usuario
 
-senhas_criptografadas = stauth.Hasher(["123456", "123123", "333333"]).generate()
+lista_usuarios = session.query(Usuario).all()
 
 credenciais = {"usernames": {
-    "lira@gmail.com": {"name": "Lira", "password": senhas_criptografadas[0]},
-    "alon@gmail.com": {"name": "Alon", "password": senhas_criptografadas[1]},
-    "amanda@gmail.com": {"name": "Amanda", "password": senhas_criptografadas[2]},
+    usuario.email: {"name": usuario.nome, "password": usuario.senha} for usuario in lista_usuarios
 }}
 
 authenticator = stauth.Authenticate(credenciais, "credenciais_hashco", "fsyfus%$67fs76AH7", cookie_expiry_days=30)
