@@ -36,11 +36,23 @@ if dados_usuario:
 
     base = carregar_dados()
 
-    pg = st.navigation(
+    email_usuario = dados_usuario["username"]
+    usuario = session.query(Usuario).filter_by(email=email_usuario).first()
+
+    if usuario.admin:
+        pg = st.navigation(
+            {
+            "Home": [st.Page("homepage.py", title="Hash&Co")],
+            "Dashboards": [st.Page("dashboard.py", title="Dashboard"), st.Page("indicadores.py", title="Indicadores")],
+            "Conta": [st.Page(logout, title="Sair"), st.Page("criar_conta.py", title="Criar Conta")]
+            }
+        )
+    else:
+        pg = st.navigation(
         {
          "Home": [st.Page("homepage.py", title="Hash&Co")],
          "Dashboards": [st.Page("dashboard.py", title="Dashboard"), st.Page("indicadores.py", title="Indicadores")],
-         "Conta": [st.Page(logout, title="Sair"), st.Page("criar_conta.py", title="Criar Conta")]
+         "Conta": [st.Page(logout, title="Sair")]
          }
     )
 

@@ -104,3 +104,24 @@ AULA_8: Conectando a autenticação com o Banco de Dados
     Consulta de usuarios:
         lista_usuarios = session.query(Usuario).all()
 
+
+AULA_9: Diferentes níveis de acesso (Autorização)
+
+    Gerenciando niveis de acessos:
+        if usuario.admin:
+            pg = st.navigation(
+                {
+                "Home": [st.Page("homepage.py", title="Hash&Co")],
+                "Dashboards": [st.Page("dashboard.py", title="Dashboard"), st.Page("indicadores.py", title="Indicadores")],
+                "Conta": [st.Page(logout, title="Sair"), st.Page("criar_conta.py", title="Criar Conta")]
+                }
+            )
+        else:
+            pg = st.navigation(
+            {
+            "Home": [st.Page("homepage.py", title="Hash&Co")],
+            "Dashboards": [st.Page("dashboard.py", title="Dashboard"), st.Page("indicadores.py", title="Indicadores")],
+            "Conta": [st.Page(logout, title="Sair")]
+            }
+        )
+
