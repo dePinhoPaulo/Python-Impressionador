@@ -125,3 +125,43 @@ AULA_9: Diferentes níveis de acesso (Autorização)
             }
         )
 
+
+AULA_10: Tela de Criar Conta
+
+    Estrutura de criação de conta:
+        if botao_submit:
+            lista_usuarios_existentes = session.query(Usuario).filter_by(email=email_usuario).all()
+            if len(lista_usuarios_existentes) > 0:
+                st.write("Já existe um usuário com esse email cadastrado")
+            elif len(email_usuario) < 5 or len(senha_usuario) < 3:
+                st.write("Preencha o campo de email e senha corretamente")
+            else:
+                senha_criptografada = stauth.Hasher([senha_usuario]).generate()[0]
+                usuario = Usuario(nome=nome_usuario, senha=senha_criptografada, email=email_usuario, admin=admin_usuario)
+                session.add(usuario)
+                session.commit()
+                st.write("Usuário criado")
+                st.switch_page("homepage.py")
+
+
+AULA_11: Tela de Homepage
+
+    Criando pagina principal:
+
+        Estruturas das colunas da pagina:
+            coluna_esquerda, coluna_direita = st.columns([1, 1.5])
+            coluna_esquerda.title("Hash&Co")
+            coluna_esquerda.write("#### Bem vindo, Fulano") # markdown
+            botao_dashboards = coluna_esquerda.button("Dashboard Projetos")
+            botao_indicadores = coluna_esquerda.button("Principais Indicadores")
+        
+        Link dos botões:
+            if botao_dashboards:
+                st.switch_page("dashboard.py")
+            if botao_indicadores:
+                st.switch_page("indicadores.py")
+
+        Imgem central e borda:
+            container = coluna_direita.container(border=True)
+            container.image("imagens/time-comunidade.webp")
+
