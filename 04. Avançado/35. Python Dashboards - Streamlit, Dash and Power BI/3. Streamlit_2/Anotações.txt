@@ -165,3 +165,38 @@ AULA_11: Tela de Homepage
             container = coluna_direita.container(border=True)
             container.image("imagens/time-comunidade.webp")
 
+
+AULA_12: Tela Indicadores - Cards
+
+    Criação dos Cards:  
+        def criar_card(icone, numero, texto, coluna_card):
+            container = coluna_card.container(border=True)
+            coluna_esquerda, coluna_direita = container.columns([1, 2.5])
+            coluna_esquerda.image(f"imagens/{icone}")
+            coluna_direita.write(numero)
+            coluna_direita.write(texto)
+
+        coluna_esquerda, coluna_meio, coluna_direita = st.columns([1, 1, 1])
+
+        criar_card("oportunidades.png", "2633", "Oportunidades", coluna_esquerda)
+        criar_card("projetos_fechados.png", "504", "Projetos Fechados", coluna_meio)
+        criar_card("em_andamento.png", "331", "Em andamento", coluna_direita)
+
+        criar_card("total_orcado.png", "R$10,489,500", "Total Orçado", coluna_esquerda)
+        criar_card("total_pago.png", "R$9,625,100", "Total Pago", coluna_meio)
+        criar_card("desconto.png", "R$864,400", "Total Desconto", coluna_direita)
+
+
+AULA_13: Tela Indicadores - Cálculo dos Indicadores
+
+    Adcionando valores nos cards:
+        base_emandamento = base[base["Status"]=="Em andamento"]
+        base_fechados = base[base["Status"].isin(["Em andamento", "Finalizado"])]
+
+        criar_card("oportunidades.png", f'{base["Código Projeto"].count():,}', "Oportunidades", coluna_esquerda)
+        criar_card("projetos_fechados.png", f'{base_fechados["Código Projeto"].count():,}', "Projetos Fechados", coluna_meio)
+        criar_card("em_andamento.png", f'{base_emandamento["Código Projeto"].count():,}', "Em andamento", coluna_direita)
+        criar_card("total_orcado.png", f'R${base_fechados["Valor Orçado"].sum():,}', "Total Orçado", coluna_esquerda)
+        criar_card("total_pago.png", f'R${base_fechados["Valor Negociado"].sum():,}', "Total Pago", coluna_meio)
+        criar_card("desconto.png", f'R${base_fechados["Desconto Concedido"].sum():,}', "Total Desconto", coluna_direita)
+
