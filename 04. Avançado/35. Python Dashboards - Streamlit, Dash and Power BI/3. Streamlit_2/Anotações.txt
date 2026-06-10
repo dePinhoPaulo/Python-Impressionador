@@ -200,3 +200,38 @@ AULA_13: Tela Indicadores - Cálculo dos Indicadores
         criar_card("total_pago.png", f'R${base_fechados["Valor Negociado"].sum():,}', "Total Pago", coluna_meio)
         criar_card("desconto.png", f'R${base_fechados["Desconto Concedido"].sum():,}', "Total Desconto", coluna_direita)
 
+
+AULA_14: Tela Indicadores - Gráfico de Funil
+
+    Grafico de funil ordenado:
+        base_status = base.groupby("Status", as_index=False).count()
+        base_status = base_status.rename(columns={"Código Projeto": "Quantidade"})
+        base_status = base_status.sort_values(by="Quantidade", ascending=False)
+        grafico = px.funnel(base_status, x="Quantidade", y="Status")
+        st.plotly_chart(grafico)
+
+
+AULA_15: Tela Dashboards - Seletores e Container
+
+    Caixa de seleção de filtros:
+        setor = coluna_esquerda.selectbox("Setor", list(base["Setor"].unique()))
+        status = coluna_meio.selectbox("Status", list(base["Status"].unique()))
+        base = base[(base["Setor"]==setor) & (base["Status"]==status)]
+
+
+AULA_16: Tela Dashboards - Gráfico de Área
+
+    Grafico de evolução mes a mes:
+        base = base[(base["Setor"]==setor) & (base["Status"]==status)]
+        base_mensal = base.groupby(base["Data Chegada"].dt.to_period("M")).sum(numeric_only=True).reset_index()
+        base_mensal["Data Chegada"] = base_mensal["Data Chegada"].dt.to_timestamp()
+
+        container = st.container(border=True)
+        with container:
+            # grafico de area
+            st.write("### Total de Projetos por mês (R$)")
+            grafico_area = px.area(base_mensal, x="Data Chegada", y="Valor Negociado")
+            st.plotly_chart(grafico_area)
+            # grafico de colunas
+            st.table(base_mensal.head(15))
+
