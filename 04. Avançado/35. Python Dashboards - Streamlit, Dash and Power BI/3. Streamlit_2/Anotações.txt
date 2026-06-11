@@ -235,3 +235,24 @@ AULA_16: Tela Dashboards - Gráfico de Área
             # grafico de colunas
             st.table(base_mensal.head(15))
 
+
+AULA_17: Finalização - Tela Dashboards - Gráfico de Coluna
+
+    Gráfico de barras:
+        import plotly.graph_objects as go
+
+        grafico_barra = go.Figure(data=[
+            go.Bar(name="Valor Orçado", x=base_mensal["Data Chegada"], y=base_mensal["Valor Orçado"], text=base_mensal["Valor Orçado"]),
+            go.Bar(name="Valor Pago", x=base_mensal["Data Chegada"], y=base_mensal["Valor Negociado"], text=base_mensal["Valor Negociado"])
+        ])
+        grafico_barra.update_layout(barmode="group")
+        st.plotly_chart(grafico_barra)
+
+
+AULA_18: Trabalhando com informações da Sessão do Usuário
+
+    Nome do usuario na tela principal:
+        secao_usuario = st.session_state
+        nome_usuario = None
+        if "username" in secao_usuario:
+            nome_usuario = secao_usuario.name

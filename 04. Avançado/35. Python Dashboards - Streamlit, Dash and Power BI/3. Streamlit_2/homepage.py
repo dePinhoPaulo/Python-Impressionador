@@ -4,10 +4,16 @@ import streamlit as st
 # containers
 # columns
 
+secao_usuario = st.session_state
+nome_usuario = None
+if "username" in secao_usuario:
+    nome_usuario = secao_usuario.name
+
 coluna_esquerda, coluna_direita = st.columns([1, 1.5])
 
 coluna_esquerda.title("Hash&Co")
-coluna_esquerda.write("#### Bem vindo, Fulano") # markdown
+if nome_usuario:
+    coluna_esquerda.write(f"#### Bem vindo, {nome_usuario}") # markdown
 botao_dashboards = coluna_esquerda.button("Dashboard Projetos")
 botao_indicadores = coluna_esquerda.button("Principais Indicadores")
 

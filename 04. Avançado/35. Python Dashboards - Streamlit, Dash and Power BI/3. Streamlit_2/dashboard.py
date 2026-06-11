@@ -20,6 +20,30 @@ with container:
     grafico_area = px.area(base_mensal, x="Data Chegada", y="Valor Negociado")
     st.plotly_chart(grafico_area)
 
+    # titulo e filtro de ano
+    coluna_esquerda, coluna_direita = st.columns([3, 1])
+    coluna_esquerda.write("### Comparação Orçado x Pago")
 
-    # grafico de colunas
-    st.table(base_mensal.head(15))
+    base_mensal["Ano"] = base_mensal["Data Chegada"].dt.year
+    lista_anos = list(base_mensal["Ano"].unique())
+    ano_selecionado = coluna_direita.selectbox("Ano", lista_anos)
+
+    base_mensal = base_mensal[base_mensal["Ano"]==ano_selecionado]
+
+    # métricas
+    total_pago = base_mensal["Valor Negociado"].sum()
+    total_desconto = base_mensal["Desconto Concedido"].sum()
+
+    coluna_esquerda, coluna_direita = st.columns([1, 1])
+    coluna_esquerda.metric("Total Pago", f'R${total_pago:,}')
+    coluna_direita.metric("Total Desconto", f'R${total_desconto:,}')
+
+    # grafico de barra
+    import plotly.graph_objects as go
+
+    grafico_barra = go.Figure(data=[
+        go.Bar(name="Valor Orçado", x=base_mensal["Data Chegada"], y=base_mensal["Valor Orçado"], text=base_mensal["Valor Orçado"]),
+        go.Bar(name="Valor Pago", x=base_mensal["Data Chegada"], y=base_mensal["Valor Negociado"], text=base_mensal["Valor Negociado"])
+    ])
+    grafico_barra.update_layout(barmode="group")
+    st.plotly_chart(grafico_barra)
