@@ -1,0 +1,18 @@
+AULA_1: Leia antes de começar
+
+
+AULA_2: Instruções Importantes
+
+    Seu código deve estar funcionando sem erros no jupyter
+    Transformar o código jupyter em scripts python padrão (extensão .py). Seu código deve estar funcionando nesse formato também.
+    Usar uma biblioteca de conversão (pyinstaller ou auto-py-to-exe) para transformar o código em executável.
+    Testar e adaptar o que for necessário.
+
+
+AULA_3: Python para exe com Arquivos Simples
+
+    Biblioteca pyinstaller
+
+    No cmd, executar o comando de conversão para exe:
+        pyinstaller -w nome_do_programa.py
+
