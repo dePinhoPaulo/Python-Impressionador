@@ -16,3 +16,13 @@ AULA_3: Python para exe com Arquivos Simples
     No cmd, executar o comando de conversão para exe:
         pyinstaller -w nome_do_programa.py
 
+
+AULA_4: Diminuindo Tamanho de Arquivos Executáveis
+
+    Para diminuir o tamanho do arquivo, criar um ambiente virtual para garantir que teremos apenas as bibliotecas importantes.
+
+    Criar o ambiente virtual
+    Executar o nosso código por dentro do ambiente virtual
+    Identificar erros e instalar bibliotecas que faltam, apenas as que o programa pede.
+    Instalar o pyinstaller e transformar em executável o programa Python
+
