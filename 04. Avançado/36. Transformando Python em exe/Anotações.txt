@@ -26,3 +26,11 @@ AULA_4: Diminuindo Tamanho de Arquivos Executáveis
     Identificar erros e instalar bibliotecas que faltam, apenas as que o programa pede.
     Instalar o pyinstaller e transformar em executável o programa Python
 
+
+AULA_5: Adaptando o código de Arquivos Complexos
+
+    Codigo de automação Selenium em EXE:
+        auto-py-to-exe para transformar o arquivo python em executável
+        pathlib ou os para adaptar todos os "caminhos dos arquivos"
+        Alternativamente, podemos usar o tkinter para permitir a gente escolher manualmente o arquivo, independente do computador que vamos rodar o programa
+    
