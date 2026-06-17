@@ -34,3 +34,21 @@ AULA_5: Adaptando o código de Arquivos Complexos
         pathlib ou os para adaptar todos os "caminhos dos arquivos"
         Alternativamente, podemos usar o tkinter para permitir a gente escolher manualmente o arquivo, independente do computador que vamos rodar o programa
     
+
+AULA_6: Python para exe com Arquivos Complexos
+
+    Aplicação desktop que transforma codigo em EXE.
+
+
+AULA_7: Executando Códigos em Python Automaticamente
+
+    Agendador de tarefas:
+        Frequancia de execução:
+            Horio, Quantidades, etc.
+        Ação:
+            Ação a ser executada, Caminhoc, etc.
+        Condições;
+
+        Testar com 'Executar'
+        Histórioco de execuções
+
