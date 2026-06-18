@@ -1,0 +1,12 @@
+AULA_2: Informações Importantes sobre os Projetos
+
+    Criar um projeto que envolva automatização de um processo no computador.
+
+
+AULA_3: Descrição do Projeto 1 - Automação de Processo
+
+    Descrição do processo:
+        Calcular o OnePage de cada loja;
+        Enviar um email para o gerente de cada loja com o seu OnePage no corpo do e-mail;
+        E também o arquivo completo com os dados da sua respectiva loja em anexo.
+
