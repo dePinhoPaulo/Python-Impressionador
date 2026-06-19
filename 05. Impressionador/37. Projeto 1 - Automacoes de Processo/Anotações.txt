@@ -10,3 +10,24 @@ AULA_3: Descrição do Projeto 1 - Automação de Processo
         Enviar um email para o gerente de cada loja com o seu OnePage no corpo do e-mail;
         E também o arquivo completo com os dados da sua respectiva loja em anexo.
 
+
+AULA_4: Como vamos resolver o Projeto
+
+    Passos:
+        Importar e tratar base;
+        Criar 1 arquivo para cada loja;
+        Salvar backup na pasta;
+        Calcular indicadores;
+        Enviar Onpage;
+        Enviar Email para diretoria.
+
+
+AULA_5: Importando Bases de Dados
+
+    Biblioteca Pandas;
+
+    Importação das bases:
+        emails = pd.read_excel(r'Bases de Dados\Emails.xlsx')
+        lojas = pd.read_csv(r'Bases de Dados\Lojas.csv', encoding='latin1', sep=';')
+        vendas = pd.read_excel(r'Bases de Dados\Vendas.xlsx')
+
