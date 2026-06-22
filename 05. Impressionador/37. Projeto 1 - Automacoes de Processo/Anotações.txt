@@ -31,3 +31,17 @@ AULA_5: Importando Bases de Dados
         lojas = pd.read_csv(r'Bases de Dados\Lojas.csv', encoding='latin1', sep=';')
         vendas = pd.read_excel(r'Bases de Dados\Vendas.xlsx')
 
+
+AULA_6: Criando uma Tabela para cada Loja
+
+    Separandos tabelas de vendas po loja:
+        dicionario_loja = {}
+        for loja in lojas['Loja']:
+            dicionario_loja[loja] = vendas.loc[vendas['Loja_x']==loja, :]
+
+
+AULA_7: Definindo o Dia do Indicador
+
+    Pegando ultima data para o indicador:
+        dia_indicador = vendas['Data'].max()
+
