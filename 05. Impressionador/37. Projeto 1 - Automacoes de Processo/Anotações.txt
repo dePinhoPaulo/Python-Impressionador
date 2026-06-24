@@ -45,3 +45,24 @@ AULA_7: Definindo o Dia do Indicador
     Pegando ultima data para o indicador:
         dia_indicador = vendas['Data'].max()
 
+
+AULA_8: Percorrendo a Pasta de Backup
+
+    caminho_backup = pathlib.Path(r'Backup Arquivos Lojas')
+    arquivos_pasta_bachup = caminho_backup.iterdir()
+    lista_nomes_backup = [arquivo.name for arquivo in arquivos_pasta_bachup]
+
+
+AULA_9: Criando arquivos de Backup para cada Loja
+
+    Salvar na pasta:
+        for loja in dicionario_loja:
+
+            if loja not in lista_nomes_backup:
+                nova_pasta = caminho_backup / loja
+                nova_pasta.mkdir()
+            
+            nome_arquivo = '{}_{}_{}.xlsx'.format(dia_indicador.month, dia_indicador.day, loja)
+            local_arquivo = caminho_backup / loja / nome_arquivo
+            dicionario_loja[loja].to_excel(local_arquivo)
+    
