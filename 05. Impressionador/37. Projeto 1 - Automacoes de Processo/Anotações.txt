@@ -66,3 +66,30 @@ AULA_9: Criando arquivos de Backup para cada Loja
             local_arquivo = caminho_backup / loja / nome_arquivo
             dicionario_loja[loja].to_excel(local_arquivo)
     
+
+AULA_10: Indicador 1 - Faturamento
+
+    Dataframes de vendas:
+        vendas_loja = dicionario_lojas[loja]
+        vendas_loja_dia = vendas_loja.loc[vendas_loja['Data']==dia_indicador, :]
+    
+    Vendas anual e dia:
+        faturamento_ano = vendas_loja['Valor Final'].sum()
+        faturamento_dia = vendas_loja_dia['Valor Final'].sum()
+
+
+AULA_11: Indicador 2 - Diversidade de Produtos
+
+    Produtos diferentes vendidos:
+        qtd_produto_ano = len(vendas_loja['Produto'].unique())
+        qtd_produto_dia = len(vendas_loja_dia['Produto'].unique())
+
+
+AULA_12: Indicador 3 - Ticket Médio
+
+    valor_venda = vendas_loja.groupby('Código Venda')['Valor Final'].sum()
+    ticket_medio_ano = valor_venda.mean()
+
+    valor_venda_dia = vendas_loja_dia.groupby('Código Venda')['Valor Final'].sum()
+    ticket_medio_dia = valor_venda_dia.mean()
+
