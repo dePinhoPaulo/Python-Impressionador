@@ -93,3 +93,40 @@ AULA_12: Indicador 3 - Ticket Médio
     valor_venda_dia = vendas_loja_dia.groupby('Código Venda')['Valor Final'].sum()
     ticket_medio_dia = valor_venda_dia.mean()
 
+
+AULA_13: Criando E-mail para os Gerentes
+
+    Enviar email com outlook:
+
+        Informações basicas do email:
+            outlook = win32.Dispatch('outlook.application')
+            nome = emails.loc[emails['Loja']==loja, 'Gerente'].values[0]
+            mail = outlook.CreateItem(0)
+            mail.To = emails.loc[emails['Loja']==loja, 'E-mail'].values[0]
+            mail.Subject = f'OnePage Dia {dia_indicador.day}/{dia_indicador.month} - Loja {loja}'
+            mail.Body = 'Texto do E-mail'
+            # ou mail.HTMLBody = '<p>Corpo do Email</p>'
+
+        Anexos:
+            attachment  = pathlib.Path.cwd() / caminho_backup / loja / f'{dia_indicador.month}_{dia_indicador.day}_{loja}.xlsx'
+            mail.Attachments.Add(str(attachment))
+
+        Enviar:
+            mail.send()
+
+
+AULA_14: Formatando Corpo do E-mail e Tabela em HTML
+
+    Construção do HTML para corpo do email:
+        mail.HTMLBody = f'''
+            <p>Bom dia, {nome}</p>
+            <p>O resultado de ontem <strong>({dia_indicador.day}/{dia_indicador.month})</strong> da <strong>Loja {loja}</strong> foi:</p>
+
+            <p>Segue em anexo a planilha com todos os dados para mais detalhes.</p>
+            <p>Qualquer dúvida estou à disposição.</p>
+            <p>Att., Lira</p>
+        '''
+    
+    Alterar cor do caractere especial no HTML:
+        <td style="text-align: center"><font color="{cor_fat_dia}">◙</font></td>
+    
