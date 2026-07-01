@@ -130,3 +130,28 @@ AULA_14: Formatando Corpo do E-mail e Tabela em HTML
     Alterar cor do caractere especial no HTML:
         <td style="text-align: center"><font color="{cor_fat_dia}">◙</font></td>
     
+
+AULA_15: Automatizando o Código para todas as Lojas
+
+    Adicionando o codigo de envio no for, para  enviar a todos:
+        for loja in dicionario_lojas:
+            vendas_loja = dicionario_lojas[loja]
+            vendas_loja_dia = vendas_loja.loc[vendas_loja['Data']==dia_indicador, :]
+
+
+AULA_16: Criando Ranking Diário e Anual
+
+    Dataframe de rankig:
+        faturamento_lojas = vendas.groupby('Loja')[['Valor Final']].sum()
+        faturamento_lojas_ano = faturamento_lojas.sort_values(by='Valor Final', ascending=False)
+        display(faturamento_lojas_ano)
+
+    Salvando em excel:
+        nome_arquivo = '{}_{}_Ranking Anual.xlsx'.format(dia_indicador.month, dia_indicador.day)
+        faturamento_lojas_ano.to_excel(r'Backup Arquivos Lojas\{}'.format(nome_arquivo))
+
+
+AULA_17: Enviando e-mail para Diretoria e Fim do Projeto
+
+    Enviando email das planilhas de ranking.
+
