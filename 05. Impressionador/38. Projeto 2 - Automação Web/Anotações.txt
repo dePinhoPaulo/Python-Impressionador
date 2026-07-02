@@ -1,0 +1,47 @@
+AULA_02: Explicação do formato do Projeto
+
+    Montar passo a passo dos processo da automação;
+
+
+AULA_03: Como decidir por qual caminho automatizar tarefas?
+
+    Recomendações das automações:
+        RPA - Pyautogui
+            + Simples
+            + funciona em qualquer programa
+            + se passa por voce
+            - lento
+            - fragil
+            - naõ funciona em 2° plano
+        
+        Bibliotecas/Códigod/APIS
+            + Melhor solução
+            + robusto
+            + seguro
+            + roda em 2° plano
+            + escalavel
+            - mais dificil tecnicamente
+            - pode ter custos
+
+        Selenium/Playwright
+            + roda em 2° plano
+            + escalavel, mas não tanto
+            + mais robusto que RPA, mas menos que API
+            - só funciona no navegador
+
+
+AULA_04: Entendendo o desafio
+
+    Pesquisar preços de produtos a partir de uma lista no excel.
+
+
+AULA_05: Inicialização do projeto e da base de produtos
+
+    Difinição do passa a passo do projeto;
+
+    Preparação do ambiente:
+        Instalação do elenium, pandas, openpyxl
+    
+    Inicialização do navegador;
+
+    Importando planilha;
