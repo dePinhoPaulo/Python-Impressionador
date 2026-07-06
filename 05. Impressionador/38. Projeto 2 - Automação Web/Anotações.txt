@@ -45,3 +45,16 @@ AULA_05: Inicialização do projeto e da base de produtos
     Inicialização do navegador;
 
     Importando planilha;
+
+
+AULA_06: Busca no primeiro site de preços
+
+    Estrutura basica de pesquisa:
+        nome = "Frankenstein"
+
+        navegador.get('https://www.gutenberg.org/')
+
+        elemento = navegador.find_element("class name", "search-input")
+        elemento.send_keys(nome)
+        elemento.send_keys(Keys.ENTER)
+
