@@ -58,3 +58,19 @@ AULA_06: Busca no primeiro site de preços
         elemento.send_keys(nome)
         elemento.send_keys(Keys.ENTER)
 
+
+AULA_07: Analisando resultados de busca para encontrar correspondências
+
+    Estrutura de ras pagem dos dados na web:
+        lista_resultados = navegador.find_elements("class name", "booklink")
+        link = None
+        for resultado in lista_resultados:
+            texto = resultado.text
+            if nome.lower() in texto.lower():
+                print(texto)
+                link = resultado.find_element("class name", "link").get_attribute("href")
+                print(link)
+                break
+        if link:
+            preco = 0
+
