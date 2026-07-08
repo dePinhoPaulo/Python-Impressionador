@@ -74,3 +74,13 @@ AULA_07: Analisando resultados de busca para encontrar correspondências
         if link:
             preco = 0
 
+
+AULA_08: Envelopando busca em forma de função
+
+    Encapsulando pesquisa do livro em uma função:
+        def pesquisar_gutenberg(nome, autor, navegador):
+        return link, preco
+
+        link, preco = pesquisar_gutenberg(nome, autor, navegador)
+        print(link, preco)
+
