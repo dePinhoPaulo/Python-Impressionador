@@ -84,3 +84,9 @@ AULA_08: Envelopando busca em forma de função
         link, preco = pesquisar_gutenberg(nome, autor, navegador)
         print(link, preco)
 
+
+AULA_09: Iniciando scraping no 2º site
+
+    Estrutura para navegar na estrutura da pagina e retornar link do livro:
+        "Assim como o primeiro site"
+
