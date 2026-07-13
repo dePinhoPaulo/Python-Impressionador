@@ -90,3 +90,17 @@ AULA_09: Iniciando scraping no 2º site
     Estrutura para navegar na estrutura da pagina e retornar link do livro:
         "Assim como o primeiro site"
 
+
+AULA_10: Replicando a lógica básica de scraping para o 2º site e encapsulando em função
+
+    Estrutura de repetição nas consultados dos livros da planilha:
+        for linha in df_produtos.index:
+            nome = df_produtos.loc[linha, "nome"]
+            autor = df_produtos.loc[linha, "autor"]
+            categoria = df_produtos.loc[linha, "categoria"]
+
+            link1, preco1 = pesquisar_gutenberg(nome, autor, navegador)
+            print(nome, link1, preco1)
+            if not link1:
+                link2, preco2 = pesquisar_bookstocrape(nome, autor, navegador)
+                print(nome, link2, preco2)
