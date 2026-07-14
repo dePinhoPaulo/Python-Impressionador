@@ -104,3 +104,10 @@ AULA_10: Replicando a lógica básica de scraping para o 2º site e encapsulando
             if not link1:
                 link2, preco2 = pesquisar_bookstocrape(nome, autor, navegador)
                 print(nome, link2, preco2)
+
+
+AULA_11: Resolvendo paginação e finalizando o projeto
+
+    Navegando nas paginas web;
+    Preenchimento da planilha Excel;
+
