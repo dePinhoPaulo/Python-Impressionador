@@ -1,0 +1,11 @@
+AULA_02: Projeto de Ciência de Dados e Recomendações
+
+    Explicação do Módulo;
+
+
+AULA_03: As etapas de um projeto de Ciência de Dados
+
+    O que é:
+        Ciência de Dados está preocupado em resolver os desafios do negócio e saber o que fazer no futuro;
+        Fazer alguma previsão que vai ajudar a tomar o rumo da empresa
+
