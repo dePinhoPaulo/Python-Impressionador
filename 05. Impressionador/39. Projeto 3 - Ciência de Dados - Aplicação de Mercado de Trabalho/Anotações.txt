@@ -9,3 +9,17 @@ AULA_03: As etapas de um projeto de Ciência de Dados
         Ciência de Dados está preocupado em resolver os desafios do negócio e saber o que fazer no futuro;
         Fazer alguma previsão que vai ajudar a tomar o rumo da empresa
 
+    Machine Learning:
+        é um modelo disponivel para ajudar a prever alguma coisa;
+        aprendizado de maquina;
+
+    Onde podemos aplicar ciencia de dados:
+        podemos aplicar em todo lugar porque o objetivo é resolver um desafio do negócio usando dados.
+
+    Etapas de um projeto de Ciencia de Dados:
+        1. Entendimento do Desafio que voc� quer resolver
+        2. Entendimento da Empresa/�rea
+        3. Extração/Obtenção de Dados
+        4. Ajustes de Dados (Limpeza de Dados)
+        5. Análise Exploratória
+
