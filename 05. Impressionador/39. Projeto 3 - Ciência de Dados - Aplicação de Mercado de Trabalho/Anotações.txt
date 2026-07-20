@@ -22,4 +22,14 @@ AULA_03: As etapas de um projeto de Ciência de Dados
         3. Extração/Obtenção de Dados
         4. Ajustes de Dados (Limpeza de Dados)
         5. Análise Exploratória
+        6. Modelagem + Algoritmos
+        7. Interpretação dos Resultados
+        8. Deploy/Produção
 
+    O Python é a ferramenta que vai te permitir fazer isso tudo, desde o 3 até o 8
+
+    Mostrando um Projeto de Ciencia de Dados Completo na Prática
+        Recomendação -> Kaggle
+        Vamos ver como funciona na prática (não tente entender o código, tente entender os passos)
+    
+    
