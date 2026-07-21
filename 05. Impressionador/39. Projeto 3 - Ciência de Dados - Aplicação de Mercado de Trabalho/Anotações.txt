@@ -62,3 +62,30 @@ AULA_08: Importando e Consolidando as Bases de Dados
             df = pd.read_csv(caminho_bases / arquivo.name)
             base_airbnb = pd.concat([base_airbnb, df])
 
+
+AULA_09: Acrescentando as Colunas dos Meses e Anos
+
+    adicionando colunas de ano/mes no dataframe, a partir do nome do arquivo:
+        nome_mes = arquivo.name[:3]
+        mes = meses[nome_mes]
+        ano = arquivo.name[-8]
+        ano = int(ano.replace('.csv', ''))
+
+        df = pd.read_csv(caminho_bases / arquivo.name)
+        df['ano'] = ano
+        df['mes'] = mes
+
+
+AULA_10: Limpeza Inicial da Base de Dados
+
+    Como temos muitas colunas, nosso modelo pode acabar ficando muito lento.
+    Tipos de colunas que vamos excluir:
+        1. IDs, Links e informações não relevantes para o modelo
+        2. Colunas repetidas ou extremamente parecidas com outra (que dão a mesma informação para o modelo. Ex: Data x Ano/Mês
+        3. Colunas preenchidas com texto livre -> Não rodaremos nenhuma análise de palavras ou algo do tipo
+        4. Colunas em que todos ou quase todos os valores são iguais
+
+    Salvar pequena amostra para analise:
+        print(list(base_airbnb.columns))
+        base_airbnb.head(1000).to_csv('primeiros_registros.csv', sep=';')
+
