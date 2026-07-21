@@ -32,4 +32,33 @@ AULA_03: As etapas de um projeto de Ciência de Dados
         Recomendação -> Kaggle
         Vamos ver como funciona na prática (não tente entender o código, tente entender os passos)
     
-    
+
+AULA_04: Projeto - Airbnb do Rio de Janeiro
+
+    Algoritimo para prever o preço de um imovel no Rio de janeiro;
+    Link da base de dados: https://www.kaggle.com/datasets/allanbruno/airbnb-rio-de-janeiro
+
+
+AULA_05: Contextualização e Objetivo
+
+    Construir um modelo de previsão de preço que permita uma pessoa comum que possui um imóvel possa saber quanto deve cobrar pela diária do seu imóvel.
+
+
+AULA_06: Passo a Passo que vamos seguir
+
+    Passo a passo definido em cada celula do Notebook.
+
+
+AULA_07: Percorrendo a pasta com os Arquivos de Dados
+
+    Preparar ambiente;
+    Percorrendo arquivos csv;
+
+
+AULA_08: Importando e Consolidando as Bases de Dados
+
+    Consolidando todas bases em um unico datafrmae:
+        for arquivo in caminho_bases.iterdir():
+            df = pd.read_csv(caminho_bases / arquivo.name)
+            base_airbnb = pd.concat([base_airbnb, df])
+
