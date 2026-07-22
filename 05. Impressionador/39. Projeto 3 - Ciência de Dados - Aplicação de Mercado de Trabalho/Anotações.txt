@@ -103,3 +103,22 @@ AULA_12: Pegando a Análise do Excel e jogando para o pandas
         base_airbnb = base_airbnb.loc[:, colunas]
         display(base_airbnb)
 
+
+AULA_13: Tratando Valores Vazios (NaN)
+
+    Excluindo colunas com mais de 300.000 linhas com valores null:
+        for coluna in base_airbnb:
+            if base_airbnb[coluna].isnull().sum() > 300000:
+                base_airbnb = base_airbnb.drop(coluna, axis=1)
+    
+    Excluindo linhas com valores null:
+        base_airbnb = base_airbnb.dropna()
+
+
+AULA_14: Ajeitando os Tipos de Dados
+
+    Tratando tipos de dados, price e extra people:
+        base_airbnb['price'] = base_airbnb['price'].str.replace('$', '')
+        base_airbnb['price'] = base_airbnb['price'].str.replace(',', '')
+        base_airbnb['price'] = base_airbnb['price'].astype(np.float32, copy=False)
+
