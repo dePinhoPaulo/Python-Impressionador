@@ -89,3 +89,17 @@ AULA_10: Limpeza Inicial da Base de Dados
         print(list(base_airbnb.columns))
         base_airbnb.head(1000).to_csv('primeiros_registros.csv', sep=';')
 
+
+AULA_11: Análise Qualitativa das Colunas no Excel
+
+    Verificações dos valores das colunas;
+    Excluindo colunas desnecessarias do Dataframe.
+
+
+AULA_12: Pegando a Análise do Excel e jogando para o pandas
+
+    Pegando colunas selucionadas e filtrar Dataframe:
+        colunas = [LISTA DAS COLUNAS SELECIONADAS]
+        base_airbnb = base_airbnb.loc[:, colunas]
+        display(base_airbnb)
+
