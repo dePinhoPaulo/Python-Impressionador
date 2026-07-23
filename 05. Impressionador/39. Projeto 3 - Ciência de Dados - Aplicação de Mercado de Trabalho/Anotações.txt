@@ -122,3 +122,30 @@ AULA_14: Ajeitando os Tipos de Dados
         base_airbnb['price'] = base_airbnb['price'].str.replace(',', '')
         base_airbnb['price'] = base_airbnb['price'].astype(np.float32, copy=False)
 
+
+AULA_15: Análise Exploratória e Definindo um Outlier
+
+    1. Ver a correlação entre as features e decidir se manteremos todas as features que temos.
+    2. Excluir outliers (usaremos como regra, valores abaixo de Q1 - 1.5xAmplitude e valores acima de Q3 + 1.5x Amplitude). Amplitude = Q3 - Q1
+    3. Confirmar se todas as features que temos fazem realmente sentido para o nosso modelo ou se alguma delas não vai nos ajudar e se devemos excluir
+
+
+AULA_16: Analisando a Correlação Entre as Features
+
+    Análise de correlação entre as colunas numerias:
+        Utilizando Seaborn e Matplotlib.Pyplot
+
+        plt.figure(figsize=(15, 10))
+        sns.heatmap(base_airbnb.corr(numeric_only=True), annot=True, cmap='Greens')
+
+
+AULA_17: Criando uma função para os limites superior e inferior
+
+    Função para Análise de Outliers:
+        Regra = valores abaixo de Q1 - 1.5xAmplitude e valores acima de Q3 + 1.5x Amplitude. Amplitude = Q3 - Q1
+
+        def limites(coluna):
+            q1 = coluna.quantile(0.25)
+            q3 = coluna.quantile(0.75)
+            amplitude = q3 - q1
+            return q1 - 1.5 * amplitude, q3 + 1.5 * amplitude 
