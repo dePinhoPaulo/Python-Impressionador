@@ -149,3 +149,26 @@ AULA_17: Criando uma função para os limites superior e inferior
             q3 = coluna.quantile(0.75)
             amplitude = q3 - q1
             return q1 - 1.5 * amplitude, q3 + 1.5 * amplitude 
+
+
+AULA_18: Diagrama de Caixa e Histograma com o Seaborn
+
+    Criação dos diagramas:
+        def diagrama_caixa(coluna):
+            fig, (ax1, ax2) = plt.subplots(1, 2)
+            fig.set_size_inches(15, 5)
+            sns.boxplot(x=coluna, ax=ax1)
+            ax2.set_xlim(limites(coluna))
+            sns.boxplot(x=coluna, ax=ax2)
+
+        def histograma(coluna):
+            plt.figure(figsize=(15, 5))
+            sns.histplot(coluna)
+
+
+AULA_19: Analisando a Coluna de price
+
+    Como estamos construindo um modelo para imóveis comuns, 
+    acredito que os valores acima do limite superior serão apenas de apartamentos de altíssimo luxo, que não é o nosso objetivo principal.
+    Por isso, podemos excluir esses outliers.
+
