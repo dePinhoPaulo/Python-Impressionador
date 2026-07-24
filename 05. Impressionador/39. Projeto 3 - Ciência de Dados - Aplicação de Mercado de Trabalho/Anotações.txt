@@ -206,3 +206,47 @@ AULA_22: Analisando host_listings_count e Função de Gráfico de Barra
 
         base_airbnb, linhas_removidas = excluir_outliers(base_airbnb, 'host_listings_count')
 
+
+AULA_23: Analisando a Coluna de accommodates
+
+    Analise da coluna accommodates:
+        diagrama_caixa(base_airbnb['accommodates'])
+        grafico_barra(base_airbnb['accommodates'])
+
+        base_airbnb, linhas_removidas = excluir_outliers(base_airbnb, 'accommodates')
+
+
+AULA_24: Analisando a Coluna de bathrooms
+
+    Analise da coluna bathrooms:
+        diagrama_caixa(base_airbnb['bathrooms'])
+        plt.figure(figsize=(15, 5))
+        sns.barplot(x=base_airbnb['bathrooms'].value_counts().index, y=base_airbnb['bathrooms'].value_counts())
+
+        base_airbnb, linhas_removidas = excluir_outliers(base_airbnb, 'bathrooms')
+
+
+AULA_25: Analisando as Colunas de beds e bedrooms
+
+    Analise das colunas bedrooms e beds:
+        Seguimos da mesma forma Analisando os graficos e excluindo os outliers.
+
+
+AULA_26: Analisando a Coluna de guests_included
+
+    Analise da coluna guests_included:
+        Excluindo coluna do modelo.
+
+
+AULA_27: Analisando as Colunas de minimum e maximum_nights
+
+    Analise das colunas minimum e maximum_nights:
+        Seguimos da mesma forma Analisando os graficos e excluindo os outliers da minimum_nights;
+        Excluindo de maximum_nights coluna do modelo.
+
+
+AULA_28: Finalizando Análise Exploratório de Colunas numéricas com number_of_reviews
+
+    Analise da coluna number_of_reviews:
+        Excluindo coluna do modelo.
+
