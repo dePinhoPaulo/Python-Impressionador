@@ -250,3 +250,19 @@ AULA_28: Finalizando Análise Exploratório de Colunas numéricas com number_of_
     Analise da coluna number_of_reviews:
         Excluindo coluna do modelo.
 
+
+AULA_29: Análise Exploratória em Features de Texto (Categorias)
+
+    Analisando coluna property_type e agrupando valores pequenos:
+        for tipo in tabela_tipos_casas.index:
+            if tabela_tipos_casas[tipo] < 2000:
+                colunas_agrupar.append(tipo)
+
+        for tipo in colunas_agrupar:
+            base_airbnb.loc[base_airbnb['property_type'] == tipo, 'property_type'] = 'Outros'
+
+        print(base_airbnb['property_type'].value_counts())
+        plt.figure(figsize=(15, 5))
+        grafico = sns.countplot(data=base_airbnb, x='property_type')
+        grafico.tick_params(axis='x', rotation=90)
+
