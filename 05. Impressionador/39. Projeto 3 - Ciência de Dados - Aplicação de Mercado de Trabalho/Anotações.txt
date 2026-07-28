@@ -266,3 +266,37 @@ AULA_29: Análise Exploratória em Features de Texto (Categorias)
         grafico = sns.countplot(data=base_airbnb, x='property_type')
         grafico.tick_params(axis='x', rotation=90)
 
+
+AULA_30: Analisando room_type, bed_type e cancellation
+
+    Analise da coluna room_type:
+        plt.figure(figsize=(15, 5))
+        grafico = sns.countplot(data=base_airbnb, x='room_type')
+        grafico.tick_params(axis='x', rotation=90)
+
+    Analise e agrupamento da coluna bed_type e cancellation (mesmo processo para as duas):
+        plt.figure(figsize=(15, 5))
+        grafico = sns.countplot(data=base_airbnb, x='bed_type')
+        grafico.tick_params(axis='x', rotation=90)
+
+        tabela_bed = base_airbnb['bed_type'].value_counts()
+        colunas_agrupar = []
+
+        for tipo in tabela_bed.index:
+            if tabela_bed[tipo] < 10000:
+                colunas_agrupar.append(tipo)
+        print(colunas_agrupar)
+        for tipo in colunas_agrupar:
+            base_airbnb.loc[base_airbnb['bed_type']==tipo, 'bed_type'] = 'Outros'
+
+
+AULA_31: Tratamento Especial - Coluna de amenities e listas de features
+
+    Convertendo coluna de amenities em coluna de valor numérico:
+        base_airbnb['n_amenities'] = base_airbnb['amenities'].str.split(',').apply(len)
+    
+    Fazendo trativa de Outliers como coluna numerica: 
+        diagrama_caixa(base_airbnb['n_amenities'])
+        grafico_barra(base_airbnb['n_amenities'])
+        base_airbnb, linhas_removidas = excluir_outliers(base_airbnb, 'n_amenities')
+
