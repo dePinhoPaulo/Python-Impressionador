@@ -300,3 +300,10 @@ AULA_31: Tratamento Especial - Coluna de amenities e listas de features
         grafico_barra(base_airbnb['n_amenities'])
         base_airbnb, linhas_removidas = excluir_outliers(base_airbnb, 'n_amenities')
 
+
+AULA_32: Excluindo Outliers da Coluna de amenities
+
+    Como a coluna de amenities ficou numerica, vamos remover as outliers:
+        base_airbnb, linhas_removidas = excluir_outliers(base_airbnb, 'n_amenities')
+        print('{} linhas removidas'.format(linhas_removidas))
+
