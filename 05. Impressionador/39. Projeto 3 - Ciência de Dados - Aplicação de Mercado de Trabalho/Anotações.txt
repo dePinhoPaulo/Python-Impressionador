@@ -307,3 +307,41 @@ AULA_32: Excluindo Outliers da Coluna de amenities
         base_airbnb, linhas_removidas = excluir_outliers(base_airbnb, 'n_amenities')
         print('{} linhas removidas'.format(linhas_removidas))
 
+
+AULA_33: Visualização de Mapa - Densidade de Preço e Localização
+
+    Mapa interativo com plotly.express:
+        amostra = base_airbnb.sample(n=50000)  
+        centro_mapa = {'lat':amostra.latitude.mean(), 'lon':amostra.longitude.mean()}   
+        mapa = px.density_mapbox(
+            amostra, lat='latitude', lon='longitude', 
+            z='price', radius=2.0, center=centro_mapa,
+            zoom=10, mapbox_style='open-street-map'
+        )
+        mapa.show()
+
+
+AULA_34: Processo de Encoding - Importância e como funciona
+
+    preparação da bases de dados para treinamento do modelo (explicações):
+        Valores True ou False, vamos substituir True por 1 e False por 0.
+        Categoria (features em que os valores da coluna são textos) vamos utilizar o método de encoding de variáveis dummies
+
+
+AULA_35: Encoding de Colunas de True ou False
+
+    Tratando valores das colunas true e false para 1 e 0 em um dataframe separado:
+        colunas_tf = ['host_is_superhost', 'instant_bookable', 'is_business_travel_ready']
+        base_airbnb_encoding = base_airbnb.copy()'
+        for coluna in colunas_tf:
+            base_airbnb_encoding.loc[base_airbnb_encoding[coluna]=='t', coluna] = 1  
+            base_airbnb_encoding.loc[base_airbnb_encoding[coluna]=='f', coluna] = 0
+    
+
+AULA_36: Enconding de Colunas de Categorias (texto)
+
+    Tratando colunas de Categoria com o método de encoding de variáveis dummies:
+        # consiste em transformar os valores em colunas em preencher com 1 e 0 essa colunas criadas
+        colunas_categorias = ['property_type', 'room_type', 'bed_type', 'cancellation_policy']
+        base_airbnb_encoding = pd.get_dummies(data=base_airbnb_encoding, columns=colunas_categorias, dtype=int)
+
