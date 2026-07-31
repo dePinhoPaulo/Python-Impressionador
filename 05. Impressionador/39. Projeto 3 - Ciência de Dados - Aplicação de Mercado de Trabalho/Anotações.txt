@@ -345,3 +345,49 @@ AULA_36: Enconding de Colunas de Categorias (texto)
         colunas_categorias = ['property_type', 'room_type', 'bed_type', 'cancellation_policy']
         base_airbnb_encoding = pd.get_dummies(data=base_airbnb_encoding, columns=colunas_categorias, dtype=int)
 
+
+AULA_37: Os 7 Passos para Construir um Modelo de Previsão
+
+    Modelo de previsão:
+        Machine Learning é o que vamos usar para chegar nessa equação;
+        nosso caso: 
+            Y: Preço
+            x1: quartos
+            x2: camas
+            x3: banheiros
+            x4: amenities
+            ...
+        Y = a*x1 + b*x2 + c*x3 + d*x4 ...
+    
+    Passos para cirar/treinar modelo:
+        1: Definir se Classificação ou Regressão
+        2: Escolher as Métricas para Avaliar o Modelo
+        3: Escolher quais modelos vamos usar/testar
+        4: Treinar os modelos e testar
+        5: Comparar os resultados dos modelos e escolher o vencedor
+        6: Analisar o melhor modelo mais a fundo
+        7: Fazer ajustes no melhor modelo
+
+
+AULA_38: Passo 1 - Classificação ou Regressão
+
+    Classificação: Categoria (Separar entre A, B, C)
+        ex: Diagnostico, SPAM
+    
+    Regressão: Valor Específico (Um número)
+        ex: Preço, Velocidade
+
+
+AULA_39: Passo 2 - Definir as Métricas de Avaliação dos Modelos
+
+    Como definir o melhor modelo? 
+    
+    Existem diversas métricas, usaremos 2 aqui:
+    R²:
+        De 0 a 1 -> Quanto Maior, Melhor
+        Explicação Lúdica: Mede “o quanto” dos valores o modelo consegue explicar
+        Ex: 92% significa que o modelo consegue explicar 92% da variância dos dados a partir das informações que você dá para ele
+    RSME (Erro quadrático Médio ou Raiz do Erro Quadrático Médio):
+        Pode ser qualquer valor
+        Mede o “quanto o modelo erra”
+        
