@@ -391,3 +391,42 @@ AULA_39: Passo 2 - Definir as Métricas de Avaliação dos Modelos
         Pode ser qualquer valor
         Mede o “quanto o modelo erra”
         
+
+AULA_40: Passo 3 - Escolher quais Modelos vamos usar e testar
+
+    Modelos de Regressão que vamos usar:
+        Linear Regression 
+            (Regressão Linear)
+            Traça a “Melhor Reta”
+            Encontra a reta que minimiza esses erros
+
+        Random Forest Regressor 
+            (Não traduz, mas em essência: Regressão Floresta de Árvores de Decisão Aleatórias)
+            Ao invés de pegar toda a base para criar a árvore de decisão, ela cria várias árvores de decisão com pedaços menores da base e faz a média das árvores
+            Escolhe a melhor pergunta
+
+        Extra Trees 
+            (Semelhante ao Random Forest, mas com algumas diferenças significativas)
+            Mesma essência do Random Forest, mas com 1 diferença principal no método
+            Escolhe uma pergunta aleatória
+
+    "Random Forest E Extra Trees tem a mesma lógica do jogo Akinator"
+
+
+AULA_41: Passo 4 - Treinar e Testar todos os Modelos
+
+    Separamos os dados aleatoriamente em 2 conjuntos:
+        Treino
+        Teste
+
+    O treino são os dados que o seu modelo vai usar para aprender
+    O teste são os dados que usamos para ver se o modelo aprendeu bem
+
+    Ex: 80% dados treino e 20% dados de teste.
+    Avaliamos sempre o resultado nos testes, para não correr o risco de overfitting
+
+    Overfitting
+        Imagine que a gente tenha dado todos os dados para o modelo aprender
+        Nesse caso, o modelo aparentemente já viu de tudo, então ele seria melhor
+        MAS, na prática corremos o risco que o modelo acabe ficando específico demais para os dados de treino e quando formos usar no mundo real, ele faça uma péssima previsão
+        Por isso, precisamos dos dados de teste, pra ver se, em uma situação igual ao mundo real, ele vai funcionar bem	
