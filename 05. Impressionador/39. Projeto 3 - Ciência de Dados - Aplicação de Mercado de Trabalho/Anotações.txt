@@ -430,3 +430,43 @@ AULA_41: Passo 4 - Treinar e Testar todos os Modelos
         Nesse caso, o modelo aparentemente já viu de tudo, então ele seria melhor
         MAS, na prática corremos o risco que o modelo acabe ficando específico demais para os dados de treino e quando formos usar no mundo real, ele faça uma péssima previsão
         Por isso, precisamos dos dados de teste, pra ver se, em uma situação igual ao mundo real, ele vai funcionar bem	
+
+
+AULA_42: Passo 5 - Comparar os Modelos e Escolher o Melhor
+
+    Análise dos Modelos pelas Métricas que escolhemos
+        Calculamos o R² e o RSME para cada modelo.
+        Escolhemos 1 métrica para ser a principal, digamos R²
+
+        Nesse caso, o modelo com o maior R² vai ser considerado o melhor modelo
+        Usamos o RSME para critério de desempate ou para comparar modelos com R² parecidos
+
+        MAS, esses não são os únicos critérios:
+            Um modelo que demore 1hr para treinar e fazer previsões é pior do que um modelo que demore 5min
+            Um modelo que precise de menos informações para funcionar (mais simples) é melhor do que um modelo mais complexo
+
+
+AULA_43: Passo 6 - Entender como Funciona o Melhor Modelo
+
+    Como esse modelo funciona? Quais as features mais importantes?
+        Depois do modelo pronto e escolhido o melhor modelo, analisamos como o melhor modelo funciona
+        Identificamos a importância de cada feature para ver oportunidades de melhoria
+
+        Ex: Se uma feature/coluna não é utilizada pelo nosso modelo, ou é muito pouco importante, podemos testar retirar essa feature/coluna do modelo e ver o resultado
+
+        O resultado pode melhorar ou piorar, mas lembre sempre de olhar:
+            Métricas escolhidas (R² e RSME)
+            Velocidade do Modelo
+            Simplicidade do Modelo
+
+
+AULA_44: Passo 7 - Otimizar e Ajustar o Melhor Modelo
+
+    Testamos a cada mudança que fazemos no modelo para fazer um ajuste final
+        Vemos se as features identificadas no último passo podem ser retiradas
+        A cada etapa, treinamos e testamos o modelo, sempre comparando com o resultado original e o resultado anterior
+
+        Objetivo:
+            Encontrar uma possível melhoria ao modelo (inclusive de previsão -> maior R² ou menor RSME)
+            Ver se conseguimos chegar no mesmo resultado ou em um resultado muito próximo com um modelo mais simples e mais rápido
+            Fazemos outros testes que a gente queira ou tenha planejado nas etapas anteriores do projeto (ex: testar não excluir uma coluna ou tratamento de outlier)
