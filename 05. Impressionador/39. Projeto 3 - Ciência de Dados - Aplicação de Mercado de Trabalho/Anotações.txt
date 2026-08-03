@@ -470,3 +470,35 @@ AULA_44: Passo 7 - Otimizar e Ajustar o Melhor Modelo
             Encontrar uma possível melhoria ao modelo (inclusive de previsão -> maior R² ou menor RSME)
             Ver se conseguimos chegar no mesmo resultado ou em um resultado muito próximo com um modelo mais simples e mais rápido
             Fazemos outros testes que a gente queira ou tenha planejado nas etapas anteriores do projeto (ex: testar não excluir uma coluna ou tratamento de outlier)
+
+
+AULA_45: Resumo os 7 Passos e o que vamos fazer
+
+    Explicação dos passos feitos.
+
+
+AULA_46: Definição de Métricas para Avaliação e Comparação dos Modelos
+
+    Métricas de Avaliação
+        R² que vai nos dizer o quão bem o nosso modelo consegue explicar o preço.
+        Erro Quadrático Médio, que vai mostrar para gente o quanto o nosso modelo está errando.
+
+        def avaliar_modelo(nome_modelo, y_teste, previsao):
+            r2 = r2_score(y_teste, previsao)
+            RSME = np.sqrt(mean_squared_error(y_teste, previsao))
+            return f'Modelo {nome_modelo}: \nR²:{r2} \nRSME:{RSME}'
+
+
+AULA_47: Importando os Modelos de Previsão e Machine Learning
+
+    Importando e criando modelos:
+        modelos = {
+            'RandomForest': RandomForestRegressor(),
+            'LinearRegression': LinearRegression(),
+            'ExtraTrees': ExtraTreesRegressor()
+        }
+
+    Seprando Variaveis:
+        y = base_airbnb_encoding['price']
+        x = base_airbnb_encoding.drop('price', axis=1)
+
