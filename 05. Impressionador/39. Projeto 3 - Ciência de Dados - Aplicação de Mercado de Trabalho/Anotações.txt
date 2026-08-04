@@ -502,3 +502,14 @@ AULA_47: Importando os Modelos de Previsão e Machine Learning
         y = base_airbnb_encoding['price']
         x = base_airbnb_encoding.drop('price', axis=1)
 
+
+AULA_48: Treinando nossos Modelos de Machine Learning
+
+    Separa os dados em treino e teste + Treino do Modelo:
+        x_treino, x_teste, y_treino, y_teste = train_test_split(x, y, random_state=10)
+        
+        for nome_modelo, modelo in modelos.items():
+            modelo.fit(x_treino, y_treino)
+            previsao = modelo.predict(x_teste)
+            print(avaliar_modelo(nome_modelo, y_teste, previsao))
+
