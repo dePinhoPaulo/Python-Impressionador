@@ -513,3 +513,33 @@ AULA_48: Treinando nossos Modelos de Machine Learning
             previsao = modelo.predict(x_teste)
             print(avaliar_modelo(nome_modelo, y_teste, previsao))
 
+
+AULA_49: Comparando Modelos de Machine Learning
+
+    Comparaçãos dos modelos: 
+        RandomForest:
+            R²:97.24%
+            RSME:44.03
+        LinearRegression:
+            R²:32.70%
+            RSME:217.54
+        ExtraTrees:
+            R²:97.50%
+            RSME:41.93
+
+        Modelo Escolhido: ExtraTressRegressor
+            Esse foi o modelo com maior valor de R² e ao mesmo tempo o menor valor de RSME. 
+            Como não tivemos uma grande diferença de velocidade de treino e de previsão desse modelo com o modelo de RandomForest (que teve resultados próximos de R² e RSME)
+            O modelo de regressão linear não obteve um resultado satisfatório, com valores de R² e RSME muito piores do que os outros 2 modelos.
+
+        
+AULA_50: Explicando o Melhor Modelo Escolhido
+
+    Importancia de cada coluna:
+        print(modelo_et.feature_importances_)
+        print(x_treino.columns)
+
+        importancia_features = pd.DataFrame(modelo_et.feature_importances_, x_treino.columns)
+        importancia_features = importancia_features.sort_values(by=0, ascending=False)
+        display(importancia_features)
+    
