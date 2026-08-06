@@ -543,3 +543,32 @@ AULA_50: Explicando o Melhor Modelo Escolhido
         importancia_features = importancia_features.sort_values(by=0, ascending=False)
         display(importancia_features)
     
+
+AULA_51: Análise das Features do Melhor Modelo
+
+    Algumas tabela podem ser desnecessarias para o modelo.
+    Necessarios realizar alguns testes.
+
+
+AULA_52: Retirando coluna para Melhorar o Modelo
+
+    Retirando coluna da base:
+        base_airbnb_encoding = base_airbnb_encoding.drop('is_business_travel_ready', axis=1)
+        y = base_airbnb_encoding['price']
+        X = base_airbnb_encoding.drop('price', axis=1)
+
+    Retreinando modelo vencedor:
+        X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=10)
+        modelo_et.fit(X_train, y_train)
+        previsao = modelo_et.predict(X_test)
+        print(avaliar_modelo('ExtraTrees', y_test, previsao))
+
+
+AULA_53: Testando Retirar Outras Colunas e Fim do Modelo
+
+    Retirando colunas de tipo de cama:
+        base_teste = base_airbnb_encoding.copy()
+        for coluna in base_teste:
+            if 'bed_type' in coluna:    
+                base_teste = base_teste.drop(coluna, axis=1)
+
