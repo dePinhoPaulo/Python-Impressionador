@@ -572,3 +572,24 @@ AULA_53: Testando Retirar Outras Colunas e Fim do Modelo
             if 'bed_type' in coluna:    
                 base_teste = base_teste.drop(coluna, axis=1)
 
+
+AULA_54: Fazendo deploy do nosso Projeto
+
+    Passos para Deploy:
+        1 -> Criar arquivo do Modelo (joblib)
+        2 -> Escolher a forma de deploy:
+            - Arquivo Executável + Tkinter
+            - Deploy em Microsite (Flask)
+            - Deploy apenas para uso direto Streamlit
+        3 -> Outro arquivo Python (pode ser Jupyter ou PyCharm)
+        4 -> Importar streamlit e criar código
+        5 -> Atribuir ao botão o carregamento do modelo
+        6 -> Deploy feito
+
+
+AULA_55: Perpetuando o Modelo em um Arquivo
+
+    Criar arquivo do Modelo (joblib):
+        import joblib
+        joblib.dump(modelo_et, 'modelo.joblib')
+
