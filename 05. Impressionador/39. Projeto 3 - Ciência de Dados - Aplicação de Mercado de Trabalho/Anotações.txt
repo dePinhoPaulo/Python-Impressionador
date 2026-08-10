@@ -593,3 +593,24 @@ AULA_55: Perpetuando o Modelo em um Arquivo
         import joblib
         joblib.dump(modelo_et, 'modelo.joblib')
 
+
+AULA_56: Criando um Arquivo para o Deploy
+
+    Biblioteca utilizadas para deploy:
+        pandas, streamlit, joblib
+    
+    Transfomando variaveis do modelo em dicionarios
+
+
+AULA_57: Criando botões para as características
+
+    Criando campos de preenchimento da pagina no streamlit:
+        for item in x_numericos:
+            valor  = st.number_input(f'{item}')
+        for item in x_tf:
+            valor  = st.selectbox(f'{item}', ('Sim', 'Não'))
+        for item in x_listas:
+            valor  = st.selectbox(f'{item}', x_listas[item])
+
+        botao = st.button('Prever Valor do Imovel')
+    
