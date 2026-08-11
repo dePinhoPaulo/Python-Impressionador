@@ -614,3 +614,29 @@ AULA_57: Criando botões para as características
 
         botao = st.button('Prever Valor do Imovel')
     
+
+AULA_58: Personalizando e formatando os campos
+
+    Editando campos numericos do app:
+        for item in x_numericos:
+            if item == 'latitude' or item == 'longitude':
+                valor = st.number_input(f'{item}', step=0.00001, value=0.0, format="%.5f")
+            elif item == 'extra_people':
+                valor = st.number_input(f'{item}', step=0.01, value=0.0)
+            else:
+                valor = st.number_input(f'{item}', value=0)
+            x_numericos[item] = valor
+
+
+AULA_59: Armazenar as respostas dos campos de lista
+
+    Preparação para preencher colunas com respostas de listas:      
+        dicionario= {}
+        for item in x_listas:
+            for valor in x_listas[item]:
+                dicionario[f'{item}_{valor}'] = 0
+
+        for item in x_listas:
+            valor  = st.selectbox(f'{item}', x_listas[item])
+            dicionario[f'{item}_{valor}'] = 1
+
