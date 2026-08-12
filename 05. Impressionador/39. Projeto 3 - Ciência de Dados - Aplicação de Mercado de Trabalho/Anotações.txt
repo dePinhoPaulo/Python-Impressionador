@@ -640,3 +640,15 @@ AULA_59: Armazenar as respostas dos campos de lista
             valor  = st.selectbox(f'{item}', x_listas[item])
             dicionario[f'{item}_{valor}'] = 1
 
+
+AULA_60: Criando a funcionalidade do botão
+
+    Funcionalidade do botaão:
+        if botao:
+            dicionario.update(x_numericos)
+            dicionario.update(x_tf)
+            valores_x = pd.DataFrame(dicionario, index=[0])
+            modelo = joblib.load('modelo.joblib')
+            preco = modelo.predict(valores_x)
+            st.write(preco)
+

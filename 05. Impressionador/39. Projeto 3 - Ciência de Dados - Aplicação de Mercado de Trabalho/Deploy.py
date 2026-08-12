@@ -42,3 +42,11 @@ for item in x_listas:
     dicionario[f'{item}_{valor}'] = 1
 
 botao = st.button('Prever Valor do Imovel')
+
+if botao:
+    dicionario.update(x_numericos)
+    dicionario.update(x_tf)
+    valores_x = pd.DataFrame(dicionario, index=[0])
+    modelo = joblib.load('modelo.joblib')
+    preco = modelo.predict(valores_x)
+    st.write(preco)
