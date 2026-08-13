@@ -652,3 +652,10 @@ AULA_60: Criando a funcionalidade do botão
             preco = modelo.predict(valores_x)
             st.write(preco)
 
+
+AULA_61: Deploy - Correções e Comentários Importantes
+
+    Revisão do projeto;
+    Ajustes de erros;
+    Comentarios.
+
