@@ -659,3 +659,8 @@ AULA_61: Deploy - Correções e Comentários Importantes
     Ajustes de erros;
     Comentarios.
 
+
+AULA_62: Discussão sobre formas de Deploy
+
+    Explicação das diferentes forma de deploy.
+
