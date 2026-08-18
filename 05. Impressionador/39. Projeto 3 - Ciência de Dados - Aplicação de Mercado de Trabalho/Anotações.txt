@@ -664,3 +664,19 @@ AULA_62: Discussão sobre formas de Deploy
 
     Explicação das diferentes forma de deploy.
 
+
+AULA_63: Mentoria - Como uma Inteligência Artificial aprende?
+
+    O que é Inteligência Artificial?
+        "Quando voce não consegue dizer se foi uma pessoa ou uma maquina que fez aqui, isso é Inteligência Artificial"
+        
+        Real Uso:
+            Programar Instruções x Treina/Ensinar
+            Se ao inves de criar as instruções especificas de que deve ser feito voce precisa TREINAR/ENSINAR a maquina qual a ação correta a fazer e ela vai chegar nessa reposta "Sozinha"
+        
+    EX: Spam de E-mail:
+        Analisando os dados que temos disponiveis, um email é considerado spam quendo temos:
+            Pelo menos 1x a palavra "desconto" a ao mesmo tempo...
+            Pelo menos 2x a palavra "Promoção"
+        
+        O que aconteceria com esse email?
