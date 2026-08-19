@@ -680,3 +680,24 @@ AULA_63: Mentoria - Como uma Inteligência Artificial aprende?
             Pelo menos 2x a palavra "Promoção"
         
         O que aconteceria com esse email?
+
+    Como que ele aprende? Que conta que ele faz para criar essa logica?
+        1 - O computador precisa de npumeros para funcionar -> em qualquer aplicação de Inteligencia artificial você vai ter que transformar as informações em numeros para ele funcionar
+        Ex: Spam: Lista de palavras com quantidade de cada palavra
+        Ex: Imagem: Transforma a imagem em numeros
+
+        2 - Existem 3 formas de treinar a sau inteligencia:
+            Aprendizado Supervisionado;
+            Aprendizado Não supervisionado;
+            Aprendizado por Reforço. 
+    
+    Aprendizado Supervisionado:
+        Temos a respostas correta na Hora de treinar (o que chamamos de "dados rotulados")
+
+        Cuidados:
+            1 - Sua base de dados tem que ter diversidade
+                caso Ser humano x Gorila
+                caso emial do lira pro alon
+            2 - Ás vezes é importante você excluir variaveis
+                Ex: Previsao do tempo x Salario
+    
