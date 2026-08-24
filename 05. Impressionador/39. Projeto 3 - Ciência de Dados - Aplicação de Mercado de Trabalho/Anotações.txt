@@ -733,3 +733,21 @@ AULA_63: Mentoria - Como uma Inteligência Artificial aprende?
             São poucas empresas que coneguem usar isso com eficiencia ainda;
             Normalmente, para ajudar, eles tentam incluir nisso um pouco do 3° tipo de aprendizado.
 
+    Aprendizado por Reforço:
+        Você vai dando um feedback o tempo todo para o programa, dizendo de ele está indo bom ou mal;
+        Reforço Positivo e Reforço Negativo;
+        Você fica repetendi até ele chegar num resultado satisfatorio (e talvez nunca pare);
+        Ex: Adestrar Cachorro; Recomendação YouTube; Flappy Bird;
+        Problema: Exige bastante capacidade computacional
+    
+    Qual tipo de aprendizado é melhor? Qual usar?
+        Aprendizado Supervizionado;
+        Aprendizado Não Supervisionado;
+        Aprendizado por Reforço.
+
+        1- Não existe um melhor, cada caso é um caso. épara isso que existe o Cientista de Dados;
+        2- Guia Geral: Quanto mais simples possivel desde que alcance o objetivo;
+            Ex: Se você ja tem milhões de emails rotulados, por que não usar o Supervisionado?
+        3- E dentro do Aprendizado Supervisionado, qual algoritimo devo usar?
+            -Novamente, depende, mas aqui é "mais tranquilo" porque normalmente voce vai conseguir testar mais de 1 e ver qual vai sair melhor.
+
