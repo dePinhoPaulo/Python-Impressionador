@@ -1,0 +1,42 @@
+AULA_01: Instalando o PyCharm
+
+    Escolhendo IDE;
+
+
+AULA_02: Como funciona o PyCharm
+
+    Instruções e dicas para usar PyCharm;
+
+
+AULA_03: Classes e Objetos
+
+    Tudo no python é um objeto;
+    Objetos, na verdade, são Classes em python;
+    Cada Classe tem Métodos e Atributos;
+
+    Classes:
+        Classe = Objeto
+            Metdodos = O que aquele Objeto consegue fazer?
+            Atributos = Quais são as informações/propriedades do Objeto
+        
+        Classe = Pessoa
+            Metdodos = Andar, Pular, Correr...
+            Atributos = Peso, Altura, QI, Tipo Sanguineo...
+        
+        Classe = TV
+            Metdodos = Ligar TV, Mudar volume, canal...
+            Atributos = Cor, Canal, Volume, Tamanho da Tela, É SmartTV..
+        
+    Classes: Exemplos que já usamos
+        Classe: String
+            Métodos: Replace, Find, capitilize, Format
+
+        Classe: pandas.DataFrame
+            Métodos: append, copy, dropna, groupby, filter
+            Atributos: iloc, shape, columns, values, loc...
+
+    Cada Objeto é um Tipo. Dizemos: “É um objeto do Tipo String, é um objeto do tipo int, é um Objeto do Tipo DataFrame...”;
+    Vamos ver na próxima aula como isso é criado dentro do Python.
+
+
+
