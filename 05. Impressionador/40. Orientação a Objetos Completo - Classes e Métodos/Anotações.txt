@@ -39,4 +39,50 @@ AULA_03: Classes e Objetos
     Vamos ver na próxima aula como isso é criado dentro do Python.
 
 
+AULA_04: O que é uma Classe no nosso código
+
+    Classe é um modelo ou uma planta usada para criar objetos. 
+    Ela junta dados (chamados de atributos) e ações (chamadas de métodos) em um único lugar. 
+    
+    Tudo em Python é baseado nisso: 
+        um texto é um objeto de uma classe de texto, e um número é um objeto de uma classe de número.
+    
+    Componentes de uma Classe:
+        Atributos: As variáveis que guardam as características de um objeto;
+        Métodos: As funções que definem o que o objeto pode fazer;
+        __init__: O método especial usado para iniciar o objeto com seus valores básicos;
+        self: A palavra que representa o objeto específico que você está usando no momento.
+
+
+AULA_05: Conceitos Importantes sobre Programação Orientada a Objetos
+
+    Programação Orientada a Objeto X Programação Estruturada
+        Orientada a Objeto (POO):
+            Classes:
+                Classe TV:
+                    Método mudar_canal:
+                    Método mudar_voluma:
+                    Método ligar_desligar:
+            
+            Programa:
+                minha_TV = tv()
+                minha_TV.ligar()
+                minha_TV.mudar_canal('Netflix')
+                minha_TV.mudar_volume(55)
+            
+        Programação Estruturada:
+            Programa:
+                var = 1
+                lista = [1,2,3,4,5]
+
+                for item in lista:
+                    if item == variavel:
+                        print(f'(var) encontrado!')
+                print('fim do programa!')
+    
+    Qual a vantagem da Orientação a Objeto?
+        Aproveitar o código sem precisar refazer/copiar tudo
+        Encapsulamento -> Proteção a mudanças indesejadas (ex: TV – você não pode desligar a tv no botão de mudar o volume)
+        Herança -> Instâncias do Objeto tem as mesmas características, apesar de ter valores diferentes
+        Polimorfismo -> Um mesmo método pode ter várias “formas” em diferentes classes (ou subclasses) – ex: Animais -> Gatos x Cachorros
 
