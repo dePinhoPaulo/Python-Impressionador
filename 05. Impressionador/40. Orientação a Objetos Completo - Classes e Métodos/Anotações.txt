@@ -86,3 +86,44 @@ AULA_05: Conceitos Importantes sobre Programação Orientada a Objetos
         Herança -> Instâncias do Objeto tem as mesmas características, apesar de ter valores diferentes
         Polimorfismo -> Um mesmo método pode ter várias “formas” em diferentes classes (ou subclasses) – ex: Animais -> Gatos x Cachorros
 
+
+AULA_06: Criando nossa 1ª Classe
+
+    Dentro da classe, você vai criar a "função" (método) __init__
+    Esse método é quem define o que acontece quando você cria uma instância da Classe
+
+    Atributos e valores inicis da nossa classe:
+        class TV:
+        def __init__(self):
+            self.cor = 'preta'
+            self.ligada = 'delidada'
+            self.tamanho = 55
+            self.volume = 12
+            self.canal = 'Netflix'
+
+
+AULA_07: O que é o self das Classes
+
+    self é uma convenção para representar a instância atual da classe, ou seja, o objeto específico que você criou e está manipulando no momento.
+
+
+AULA_08: Criando Métodos dentro das Classes
+
+    "É a function dentro da nossa classe, como ja fizemos, o __init__"
+
+    def mudar_canal(self):
+        self.canal = "Disney+"
+
+
+AULA_09: Parâmetros nos Métodos das Classes
+
+    Passando canal que quero mudar por paramatro:
+            def mudar_canal(self, novo_canal):
+                self.canal = novo_canal
+                print(f'Canal alterado para {novo_canal}')
+            
+            tv_quarto.mudar_canal('HBO Max')
+            print(tv_quarto.canal)
+            
+        "self sempre sera passado como paramatro na classe"
+
