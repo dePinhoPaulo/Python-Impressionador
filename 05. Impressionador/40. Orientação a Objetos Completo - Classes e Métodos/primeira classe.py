@@ -11,10 +11,11 @@
 #classes
 
 class TV:
-    def __init__(self):
-        self.cor = 'preta'
+    cor = 'preta'
+
+    def __init__(self, tamanho):
         self.ligada = 'desligada'
-        self.tamanho = 55
+        self.tamanho = tamanho
         self.volume = 12
         self.canal = 'Netflix'
 
@@ -22,10 +23,10 @@ class TV:
         self.canal = novo_canal
         print(f'Canal alterado para {novo_canal}')
 
-tv_sala = TV()
-tv_quarto = TV()
+tv_sala = TV(tamanho=32)
+tv_quarto = TV(tamanho=27)
 
-tv_sala.cor = 'branca'
+TV.cor = 'branca'
 tv_quarto.tamanho = 40
 
 print(tv_quarto.cor)
@@ -38,3 +39,4 @@ tv_quarto.mudar_canal('HBO Max')
 
 print(tv_quarto.canal)
 print(tv_sala.canal)
+

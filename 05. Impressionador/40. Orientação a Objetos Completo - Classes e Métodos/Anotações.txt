@@ -127,3 +127,33 @@ AULA_09: Parâmetros nos Métodos das Classes
             
         "self sempre sera passado como paramatro na classe"
 
+
+AULA_10: Parâmetros no init da Classe
+
+    Para uma variavel de classe, sem valor inicial especifico, basta passar como paramatro da função init:
+        def __init__(self, tamanho):
+            self.cor = 'preta'
+            self.ligada = 'desligada'
+            self.tamanho = tamanho
+            self.volume = 12
+            self.canal = 'Netflix'
+        
+        *Com isso sera obrigado a passar o tamanho da tv para criar.
+
+
+AULA_11: Atributos de Classe
+
+    Atributos da classe, são para todos, se alterado, será para todas instancias:
+        class TV:
+            cor = 'preta'
+
+            def __init__(self, tamanho):
+                self.ligada = 'desligada'
+                self.tamanho = tamanho
+                self.volume = 12
+                self.canal = 'Netflix'
+        
+        tv_sala = TV()
+        tv_quarto = TV()
+        TV.cor = 'branca'
+
