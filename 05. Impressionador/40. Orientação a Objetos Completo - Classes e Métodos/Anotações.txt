@@ -157,3 +157,70 @@ AULA_11: Atributos de Classe
         tv_quarto = TV()
         TV.cor = 'branca'
 
+
+AULA_12: Aplicação - Criando um Sistema de Conta Corrente
+
+    Colocando em prática:
+        Nomes de classes inicio de cada palavra letra maiuscula;
+        NOme de metodo ou função tudo letra minuscula;
+
+        Construção da classe Conta Corrente:
+            class ContaCorrente:
+                def __init__(self, nome, cpf):
+                    self.nome = nome
+                    self.cpf = cpf
+                    self.saldo = 0
+
+
+AULA_13: Criando Métodos para a nossa Classe
+
+    Cada método deve fazer uma função simples;
+
+    Método Consulta de saldo:
+        def consultar_saldo(self):
+            print('Seu saldo é de: R${:,.2f}'.format(self.saldo))
+
+    Método Depositar dinheiro:
+        def depositar(self, valor):
+            self.saldo += valor
+
+    Método Sacar dinheiro:
+        def sacar(self, valor):
+            self.saldo -= valor
+    
+    Utilizando métodos:
+        conta_paulo.depositar(100)
+        conta_paulo.sacar(54.5)
+        conta_paulo.consultar_saldo()
+
+
+AULA_14: Métodos Auxiliares Regra de Métodos Simples e Direto ao Ponto
+
+    Podemos utilizar um metodo de nossa classe dentro de outro:
+        Utilizando o self, assim como nos atributos:
+            self.consultar_saldo()
+    
+    Método de mimite da conta:
+        def limite_conta(self):
+            self.limite = -100
+            return self.limite
+    
+    Ajuste do método de saque, que adiciona a verificação do limite da conta:
+        def sacar(self, valor):
+            if self.saldo - valor < self.limite_conta():
+                print("Você não tem saldo sulficiente para sacar esse valor!")
+                self.consultar_saldo()
+            else:
+                self.saldo -= valor
+
+
+AULA_15: Underline e Métodos Não Públicos
+
+    Métodos Não Públicos:
+        Indica um método protegido (uso interno da classe ou subclasses);
+        É um aviso para os outros programadores não mexerem.
+
+        def _limite_conta(self):
+            self.limite = -100
+            return self.limite
+
