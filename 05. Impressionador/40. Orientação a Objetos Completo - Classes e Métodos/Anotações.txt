@@ -224,3 +224,51 @@ AULA_15: Underline e Métodos Não Públicos
             self.limite = -100
             return self.limite
 
+
+AULA_16: Reforço de Organização e Padrões de Classe
+
+    Dicas de identação, quebras de linha na contrução das classes;
+
+
+AULA_17: Modificando o init de uma Classe já existente
+
+    A criação de um novo atributo na classe vai impactar em todos objetos criados;
+    por isso a criação dos atributos deve ser muito bem estruturada;
+
+    adicionando atributos de agencia e conta:
+        def __init__(self, nome, cpf, agencia, num_conta):
+            self.nome = nome
+            self.cpf = cpf
+            self.saldo = 0
+            self.limite = None
+            self.agencia = agencia
+            self.num_conta = num_conta
+
+
+AULA_18: Métodos Estáticos e Modificando Classe da Melhor Forma
+
+    Metdodo estatico:
+        Esta na classe, mas não utiliza nenhuma informação dela;
+        Esta na classe 100% para apoio.
+        Importante sinaliza estes metodos com:
+            @staticmethod
+        Importante ao Chamar o metodo, colocar o nome da classe antes:
+            ContaCorrente._data_hora()
+    
+    Metdodo de retorno de data e hora (estatico):
+        @staticmethod
+        def _data_hora():
+            fuso_BR = pytz.timezone('Brazil/East')
+            horario_BR = datetime.now(fuso_BR)
+            return horario_BR.strftime("%d/%m/%y %H:%M:%S")
+    
+    Metodos de consultar historico de trasações:
+        def consultar_transacoes(self):
+            print("Histórico de Transações: ")
+            print("Valor, Saldo, Data e Hora")
+            for transacao in self.transacoes:
+                print(transacao)
+
+        "grava as movimentações em uma lista, ex: self.transacoes.append((valor, self.saldo, ContaCorrente._data_hora()))"
+
+
