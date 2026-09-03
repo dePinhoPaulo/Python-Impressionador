@@ -272,3 +272,45 @@ AULA_18: Métodos Estáticos e Modificando Classe da Melhor Forma
         "grava as movimentações em uma lista, ex: self.transacoes.append((valor, self.saldo, ContaCorrente._data_hora()))"
 
 
+AULA_19: Usando objetos e instâncias como Parâmetro
+
+    Utilizando objeto como paramentro para transferir valores?
+        def transferir(self, valor, conta_destino):
+            self.saldo -= valor
+            self.transacoes.append((-valor, self.saldo, ContaCorrente._data_hora()))
+            conta_destino.saldo += valor
+            conta_destino.transacoes.append((valor, conta_destino.saldo, ContaCorrente._data_hora())) 
+
+        conta_maePaulo = ContaCorrente('Naia', '000.456.000.00', 1, 21450)
+        conta_paulo.transferir(50, conta_maePaulo)
+
+
+AULA_20: Docstring em Classes
+
+    Documentação e intrusção de uso da classe:
+        PEP 257: Convenção atual de decstring do python Global;
+        
+        forma de utilizar:
+            """
+            Cria um objeto conta corrente para gerenciar as contas dos clientes.
+            """
+        podeser usada em todos metodos da classe;
+        
+        para visualizar:
+            help(ContaCorrente)
+
+
+AULA_21: Atributos não Públicos
+
+    Um sublinhado (_):   
+        Não permite alteração fora da classe, de forma manual no codigo, somente atraves de um metodo;
+        Mas pode ser consultado por fora da classe;
+        ex:
+            self._cpf = cpf
+
+    Dois sublinhados (__)?
+        Não permite alteração fora da classe, de forma manual no codigo, somente atraves de um metodo;
+        E não pode ser consultado por fora da classe;
+        ex:
+            self.__cpf = cpf
+
