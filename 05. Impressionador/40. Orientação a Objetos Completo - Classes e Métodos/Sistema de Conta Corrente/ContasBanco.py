@@ -1,5 +1,6 @@
 from datetime import datetime
 import pytz
+from random import randint
 
 class ContaCorrente:
     """
@@ -28,6 +29,7 @@ class ContaCorrente:
         self.agencia = agencia
         self.num_conta = num_conta
         self._transacoes = []
+        self.cartoes = []
 
     def consultar__saldo(self):
         """
@@ -66,30 +68,55 @@ class ContaCorrente:
         conta_destino._saldo += valor
         conta_destino._transacoes.append((valor, conta_destino._saldo, ContaCorrente._data_hora()))
 
+class CartaoCredito():
+
+    @staticmethod
+    def _data_hora():
+        fuso_BR = pytz.timezone('Brazil/East')
+        horario_BR = datetime.now(fuso_BR)
+        return horario_BR
+    
+    def __init__(self, titular, conta_corrente):
+        self.numero = randint(1000000000000000, 9999999999999999)
+        self.titular = titular
+        self.validade = '{}/{}'.format(CartaoCredito._data_hora().month, CartaoCredito._data_hora().year + 4)
+        self.cod_seguranca = '{}{}{}'.format(randint(1,9), randint(1,9), randint(1,9))
+        self.limite = 1000
+        self.conta_corrente = conta_corrente
+        conta_corrente.cartoes.append(self)
+
 #programa
 conta_paulo = ContaCorrente('Paulo', '123.456.789.00', 1, 21448)
 
-print(conta_paulo._cpf)
-print(conta_paulo._saldo)
+# print(conta_paulo._cpf)
+# print(conta_paulo._saldo)
 
-conta_paulo.depositar(100)
-conta_paulo.sacar(54.5)
-conta_paulo.sacar(60)
+# conta_paulo.depositar(100)
+# conta_paulo.sacar(54.5)
+# conta_paulo.sacar(60)
 
-conta_paulo.consultar__saldo()
-conta_paulo.consultar__limite_cheque_especial()
+# conta_paulo.consultar__saldo()
+# conta_paulo.consultar__limite_cheque_especial()
 
-print("-" * 25)
+# print("-" * 25)
 
-print(conta_paulo.consultar__transacoes())
+# print(conta_paulo.consultar__transacoes())
 
-print("-" * 25)
+# print("-" * 25)
 
 conta_maePaulo = ContaCorrente('Naia', '000.456.000.00', 1, 21450)
 
-conta_paulo.transferir(50, conta_maePaulo)
+# conta_paulo.transferir(50, conta_maePaulo)
 
-conta_paulo.consultar__transacoes()
-conta_maePaulo.consultar__transacoes()
+# conta_paulo.consultar__transacoes()
+# conta_maePaulo.consultar__transacoes()
 
-help(ContaCorrente)
+# help(ContaCorrente)
+
+cartao_paulo = CartaoCredito('Paulo', conta_paulo)
+
+print(cartao_paulo.conta_corrente.num_conta)
+print(conta_paulo.cartoes[0].numero)
+print(cartao_paulo.cod_seguranca)
+
+print(cartao_paulo.validade)

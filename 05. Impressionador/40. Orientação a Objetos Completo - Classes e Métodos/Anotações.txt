@@ -314,3 +314,40 @@ AULA_21: Atributos não Públicos
         ex:
             self.__cpf = cpf
 
+
+AULA_22: Criando outra Classe e Relação entre Classes
+
+    Crinado classe de cartoes de credito, fazendo o relacionamentos entres as classes;
+    Que ao criar um cartão em uma conta, ja inserimos o objeto cartão na conta.
+
+        class ContaCorrente:
+        def __init__(self, nome, cpf, agencia, num_conta):
+            ...
+            self._transacoes = []
+            self._cartoes = []
+
+        class CartaoCredito():
+        def __init__(self, titular, conta_corrente):
+            ...
+            self.limite = None
+            self.conta_corrente = conta_corrente
+            conta_corrente._cartoes.append(self)
+        
+        conta_paulo = ContaCorrente('Paulo', '123.456.789.00', 1, 21448)
+        cartao_paulo = CartaoCredito('Paulo', conta_paulo)
+        print(cartao_paulo.conta_corrente.num_conta)
+        print(conta_paulo._cartoes[0].numero)
+
+
+AULA_23: Atributos de Data e Aleatórios
+
+    adicionando validade do cartão, numero aleatorio do cartao e codigo de segurança:
+        def __init__(self, titular, conta_corrente):
+            self.numero = randint(1000000000000000, 9999999999999999)
+            self.titular = titular
+            self.validade = '{}/{}'.format(CartaoCredito._data_hora().month, CartaoCredito._data_hora().year + 4)
+            self.cod_seguranca = '{}{}{}'.format(randint(1,9), randint(1,9), randint(1,9))
+            self.limite = 1000
+            self.conta_corrente = conta_corrente
+            conta_corrente.cartoes.append(self)
+
