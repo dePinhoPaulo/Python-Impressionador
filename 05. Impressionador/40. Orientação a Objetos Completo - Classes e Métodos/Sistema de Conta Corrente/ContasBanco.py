@@ -82,41 +82,17 @@ class CartaoCredito():
         self.validade = '{}/{}'.format(CartaoCredito._data_hora().month, CartaoCredito._data_hora().year + 4)
         self.cod_seguranca = '{}{}{}'.format(randint(1,9), randint(1,9), randint(1,9))
         self.limite = 1000
+        self._senha = '1234'
         self.conta_corrente = conta_corrente
         conta_corrente.cartoes.append(self)
 
-#programa
-conta_paulo = ContaCorrente('Paulo', '123.456.789.00', 1, 21448)
+    @property
+    def senha(self):
+        return self._senha
 
-# print(conta_paulo._cpf)
-# print(conta_paulo._saldo)
-
-# conta_paulo.depositar(100)
-# conta_paulo.sacar(54.5)
-# conta_paulo.sacar(60)
-
-# conta_paulo.consultar__saldo()
-# conta_paulo.consultar__limite_cheque_especial()
-
-# print("-" * 25)
-
-# print(conta_paulo.consultar__transacoes())
-
-# print("-" * 25)
-
-conta_maePaulo = ContaCorrente('Naia', '000.456.000.00', 1, 21450)
-
-# conta_paulo.transferir(50, conta_maePaulo)
-
-# conta_paulo.consultar__transacoes()
-# conta_maePaulo.consultar__transacoes()
-
-# help(ContaCorrente)
-
-cartao_paulo = CartaoCredito('Paulo', conta_paulo)
-
-print(cartao_paulo.conta_corrente.num_conta)
-print(conta_paulo.cartoes[0].numero)
-print(cartao_paulo.cod_seguranca)
-
-print(cartao_paulo.validade)
+    @senha.setter
+    def senha(self, valor):
+        if len(valor) == 4 and valor.isnumeric():
+            self._senha = valor
+        else:
+            print("NOVA SENHA INVALIDA!")

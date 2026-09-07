@@ -351,3 +351,56 @@ AULA_23: Atributos de Data e Aleatórios
             self.conta_corrente = conta_corrente
             conta_corrente.cartoes.append(self)
 
+
+AULA_24: Regra do Python - Underline antes dos Atributos
+
+    para alterar atributos não publicos, utilizamos o getter e setter:
+        def __init__(self, titular, conta_corrente):
+            ...
+            self._senha = '1234'
+            self.conta_corrente = conta_corrente
+            conta_corrente.cartoes.append(self)
+
+        @property
+        def senha(self):
+            return self._senha
+
+        @senha.setter
+        def senha(self, valor):
+            if len(valor) == 4 and valor.isnumeric():
+                self._senha = valor
+            else:
+                print("NOVA SENHA INVALIDA!")
+
+
+AULA_25: Listar Métodos e Atributos de uma Classe
+
+    consultar todos atributos de uma classe:
+        print(conta_paulo.__dict__)
+
+
+AULA_26: Separando Programa e Arquivo de Classes e Importando nossas Classes
+
+    separando arquivos das classes e importando para arquivo do programa:
+        from ContasBanco import ContaCorrente, CartaoCredito
+        ou
+        import ContasBanco
+    
+
+AULA_27: Criando uma nova Classe - Agências
+
+    adicionando nova classe de agencia, com seus respctivos metodos:
+        def __init__(self, telefone, cnpj, numero):
+            self.telefone = telefone
+            self.cnpj = cnpj
+            self.numero = numero
+            self.clientes = []
+            self.caixa = 0
+            self.emprestimos = []
+
+        def verificar_caixa(self):
+            
+        def emprestar_dinheiro(self, valor, cpf, juros):
+            
+        def adicionar_cliente(self, nome, cpf, patrimonio):
+
