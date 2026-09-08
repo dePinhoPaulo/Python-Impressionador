@@ -404,3 +404,47 @@ AULA_27: Criando uma nova Classe - Agências
             
         def adicionar_cliente(self, nome, cpf, patrimonio):
 
+
+AULA_28: Criando SubClasses
+
+    Uma Subclasse herda todos atributos e metodos de sua classe mãe (Agencia):
+        'Na declaração da subclasse passo como parrametro o nome da classe mãe'
+
+        class AgenciaVirtual(Agencia):
+            pass
+        
+        agencia_virtual_1 = AgenciaVirtual(22224444, 123456789858, 123)
+        agencia_virtual_1.caixa = 15000
+        agencia_virtual_1.verificar_caixa()
+    
+
+AULA_29: init em SubClasses e Herança
+
+    adicionando metodo init na subclasse:
+        'O init da subclasse deve conversar a super classe'
+        class AgenciaVirtual(Agencia):
+            def __init__(self, site, telefone, cnpj):
+                super().__init__(telefone, cnpj, 1000)
+                self.site = site
+                self.caixa = 1000000
+        
+        agencia_virtual_1 = AgenciaVirtual('www.agenciavirtual.com', 22224444, 123456789858)
+
+        "Definimos os mesmos atributos de uma agencia normal na virtual, com o diferencial de: Numero de agecia (1000) fixo, valor do caixa na abertura da agencia, e um site."
+
+
+AULA_30: Finalizando o init nas outras SubClasses
+
+    Finalizando as demais subclasses:
+        class AgenciaComum(Agencia):
+            def __init__(self, telefone, cnpj):
+                super().__init__(telefone, cnpj, numero=randint(1001, 9999))
+                self.caixa = 1000000
+
+        class AgenciaPremium(Agencia):
+            def __init__(self, telefone, cnpj):
+                super().__init__(telefone, cnpj, numero=randint(1001, 9999))
+                self.caixa = 10000000
+        
+        'Herdam todos os metodos e atributos, com o adcional de numero aleatório, sem ser necessario digitar manualmente.'
+
