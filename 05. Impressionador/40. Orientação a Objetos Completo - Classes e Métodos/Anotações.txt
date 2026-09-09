@@ -448,3 +448,49 @@ AULA_30: Finalizando o init nas outras SubClasses
         
         'Herdam todos os metodos e atributos, com o adcional de numero aleatório, sem ser necessario digitar manualmente.'
 
+
+AULA_31: Métodos Específicos de uma SubClasse
+
+    adcionando métodos especificos de uma subclasse, Agencia Virtual:
+        class AgenciaVirtual(Agencia):
+            def __init__(self, site, telefone, cnpj):
+                super().__init__(telefone, cnpj, 1000)
+                ...
+                self.caixa_paypal = 0
+
+            def depositar_paypal(self, valor):
+                self.caixa -= valor
+                self.caixa_paypal += valor
+        
+            def sacar_paypal(self, valor):
+                self.caixa += valor
+                self.caixa_paypal -= valor
+        
+        agencia_virtual_1.depositar_paypal(20000)
+        print(agencia_virtual_1.caixa)
+        print(agencia_virtual_1.caixa_paypal)
+        
+        "Métodos de uma subclasse, não podem ser utilizado em outras sub, somente os metodos da superclasse são utilizados em todas."
+
+
+AULA_32: Polimorfismo - Personalizando um Método em uma SubClasse
+
+    Editando um metodo da superclasse:
+        class AgenciaPremium(Agencia):
+
+        def adicionar_cliente(self, nome, cpf, patrimonio):
+            if patrimonio > 1000000:
+                super().adicionar_cliente(nome, cpf, patrimonio)
+            else:
+                print("Cliente não tem patrimonio minimo para entrar na Agencia Premium!")
+        
+        "Pegamos um metodo da classe pai, e aplicamos uma validação no metodo hedado (Polimorfismo)"
+
+
+AULA_33: Cuidado ao importar Arquivos de Classes
+
+    "Ao excutar nossas casse no arquivo principal (main), pode haver os abejetos que criamos como teste no aruivo da classe."
+    Por isso utilizamos essa regra no arquivo da classe, para não expotar os objetos criados ali:
+        if __name__ == '__main__':
+            agencia_1 = AgenciaComum(32671388, 12345678901)
+
