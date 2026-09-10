@@ -494,3 +494,16 @@ AULA_33: Cuidado ao importar Arquivos de Classes
         if __name__ == '__main__':
             agencia_1 = AgenciaComum(32671388, 12345678901)
 
+
+AULA_34: Mentoria Python Impressionador - Exercitando Classe e Orientação a Objeto
+
+    "Python é orientado a objeto"
+    "Tudo no python é um objeto"
+
+    Classe:
+        Atributos: Quais as características dessa classe
+        Metodos: o que voce consegue fazer com aquilo
+
+    "Toda função que se cria dentro de uma classe, passar o self como parametro, exetos poucas exeções."
+    "A grande vantagem: Poder criar vairios objetos com uma classe."
+
