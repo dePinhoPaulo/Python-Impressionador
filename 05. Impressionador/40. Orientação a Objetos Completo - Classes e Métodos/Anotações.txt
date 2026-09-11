@@ -507,3 +507,20 @@ AULA_34: Mentoria Python Impressionador - Exercitando Classe e Orientação a Ob
     "Toda função que se cria dentro de uma classe, passar o self como parametro, exetos poucas exeções."
     "A grande vantagem: Poder criar vairios objetos com uma classe."
 
+    "Uma classe tem varias funções que são os métodos"
+
+    Método para difinir o valor de vendas e calcular bonus:
+        def vendeu(self, quantidade_vedas):
+            self.vendas = quantidade_vedas
+            self.calcular_bonus() 
+
+        def calcular_bonus(self):
+            if self.vendas > self.meta:
+                self.bonus = 50
+            else:
+                self.bonus = 0
+        
+    Mini Projeto:
+        "Refatorar o codigo do robo, para uma classe"
+
+        
