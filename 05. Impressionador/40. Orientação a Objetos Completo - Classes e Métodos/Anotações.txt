@@ -523,4 +523,3 @@ AULA_34: Mentoria Python Impressionador - Exercitando Classe e Orientação a Ob
     Mini Projeto:
         "Refatorar o codigo do robo, para uma classe"
 
-        
