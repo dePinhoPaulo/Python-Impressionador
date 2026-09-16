@@ -1,0 +1,25 @@
+AULA_02: Tkinter - Criando uma Janela
+
+    Módulo de interface gráfico;
+    Criação de sistemas com interação visual;
+
+    Criando uma janela siimples:
+        janela = Tk()
+        janela.mainloop()
+
+
+AULA_03: Caixa de Mensagem
+
+    Criar elemento de texto na janela:
+        menssagem = tk.Label(text="Hello World!")
+        menssagem.pack()
+
+    "Todos objetos da janela primeiro são criados, depois incluidos na janela"
+
+
+AULA_04: Edição de Caixa de Mensagem
+
+    Alterando estilos da menssagem:
+        menssagem = tk.Label(text="Sistema de busca de cotações de moedas!", fg='white', bg='black', width=40, height=40)
+        alterar cor: nome ou Código Hexadecimal da cor
+        alterar tamanha: tu - text units
