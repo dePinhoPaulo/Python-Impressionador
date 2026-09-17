@@ -23,3 +23,55 @@ AULA_04: Edição de Caixa de Mensagem
         menssagem = tk.Label(text="Sistema de busca de cotações de moedas!", fg='white', bg='black', width=40, height=40)
         alterar cor: nome ou Código Hexadecimal da cor
         alterar tamanha: tu - text units
+
+
+AULA_05: Entry - Caixa de Texto para o Usuário
+
+    Caixa de Texto para o Usuário:
+        moeda = tk.Entry(text="Selecione a moeda desajada:")
+        moeda.pack()
+    
+
+AULA_06: Grid - Organizando as Janelas do Tkinter
+
+    Editar posicionamento dos elementos na janela:
+        menssagem2 = tk.Label(text="Selecione a moeda desajada:")
+        menssagem2.grid(row=1, column=0)
+
+        moeda = tk.Entry()
+        moeda.grid(row=1, column=1)
+
+        Grid: Funciona como um excel, escolhemos a linha e coluna de cada elemento.
+
+    Meclar celulas:
+        menssagem.grid(row=0, column=0, columnspan=2, sticky='ew')
+        columnspan: mescla as celulas;
+        sticky: Preenche completa mente as celulas mecladas, parametros(leste, oeste, norte, sul. iniciais em ingles)
+
+    Redimensionamento automacio das linha e coluna na janela:
+        janela.rowconfigure([0], weight=1)
+        janela.columnconfigure([0, 1], weight=1)
+
+
+AULA_07: Botões
+
+    Botão:
+        def buscar_cotacao():
+            print(moeda.get())
+        botao = tk.Button(text="Buscar cotação", command=buscar_cotacao)
+        botao.grid(row=2, column=1)
+
+        "Para um botão que execute uma ação precisamos passar a função da ação no command"
+
+
+AULA_08: Interação entre Elementos do Tkinter
+
+    Interação de busca de um valor e print na janela com um botão:
+        def buscar_cotacao():
+            moeda_preenchida = moeda.get()
+            cotacao_moeda = cotacoes.get(moeda_preenchida)
+            label_cotacao = tk.Label(text="Não encontrada!")
+            label_cotacao.grid(row=3, column=0)
+            if cotacao_moeda:
+                label_cotacao['text'] = f'Cotação de {moeda_preenchida} é de {cotacao_moeda} reais'
+
