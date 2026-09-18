@@ -75,3 +75,27 @@ AULA_08: Interação entre Elementos do Tkinter
             if cotacao_moeda:
                 label_cotacao['text'] = f'Cotação de {moeda_preenchida} é de {cotacao_moeda} reais'
 
+
+AULA_09: Listas Suspensas
+
+    Caixa de seleção das moedas:
+        moedas = list(cotacoes.keys())
+        
+        moeda = ttk.Combobox(janela, values=moedas)
+        moeda.grid(row=1, column=1)
+
+
+AULA_10: Caixa de Textos Grandes
+
+    Funcionalidade para buscar mais de uma cotação de moeda:
+    def buscar_cotacoes():
+        texto = caixa_texto.get("1.0", tk.END)
+        lista_moedas = texto.split("\n")
+        menssagem_cotacao = []
+        for item in lista_moedas:
+            cotacao = cotacoes.get(item)
+            if cotacao:
+                menssagem_cotacao.append(f'{item}: {cotacao}')
+        menssagem4 = tk.Label(text='\n'.join(menssagem_cotacao))
+        menssagem4.grid(row=6, column=1)
+
