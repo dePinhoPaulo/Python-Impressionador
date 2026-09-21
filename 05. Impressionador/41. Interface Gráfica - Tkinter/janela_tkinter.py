@@ -62,4 +62,41 @@ def buscar_cotacoes():
 botao_multiplas= tk.Button(text="Buscar cotação", command=buscar_cotacoes)
 botao_multiplas.grid(row=5, column=1)
 
+### Check Button ###
+
+var_promocoes = tk.IntVar()
+check_box = tk.Checkbutton(text="Deseja receber informações de promoção?", variable=var_promocoes)
+check_box.grid(row=6, column=0)
+
+
+def enviar():
+    pass
+    if var_promocoes.get() == 1:
+        print("usuario deseja receber informções")
+    else:
+        print("usuario NÃO deseja receber informções")
+
+
+botao_enviar = tk.Button(text="Enviar", command=enviar)
+botao_enviar.grid(row=7, column=0)
+
+### Radio Button ###
+
+var_passagem = tk.StringVar(value='nenhum')
+
+
+def enviar_passagem():
+    print(var_passagem.get())
+
+
+botao_classe_economica = tk.Radiobutton(text="Classe Economica", variable=var_passagem, value='Classe Economica')
+botao_classe_executiva = tk.Radiobutton(text="Classe Executiva", variable=var_passagem, value='Classe Executiva')
+botao_primeira_classe = tk.Radiobutton(text="Primeira Classe", variable=var_passagem, value='Primeira Classe')
+botao_classe_economica.grid(row=8, column=0)
+botao_classe_executiva.grid(row=8, column=1)
+botao_primeira_classe.grid(row=8, column=2)
+
+botao_enviar_passagem = tk.Button(text="Enviar", command=enviar_passagem)
+botao_enviar_passagem.grid(row=9, column=0)
+
 janela.mainloop()

@@ -99,3 +99,35 @@ AULA_10: Caixa de Textos Grandes
         menssagem4 = tk.Label(text='\n'.join(menssagem_cotacao))
         menssagem4.grid(row=6, column=1)
 
+
+AULA_11: Checkbox (Checkbutton)
+
+    Passos: Criar variavel para armazernar reposta, elemento do Checkbox, adicionar na janela.
+    var_promocoes = tk.IntVar()
+    check_box = tk.Checkbutton(text="Deseja receber informações de promoção?", variable=var_promocoes)
+    check_box.grid(row=6, column=0)
+
+    adicionar um botão de envio desta marcação:
+        def enviar():
+            if var_promocoes.get() == 1:
+                print("usuario deseja receber informções")
+            else:
+                print("usuario NÃO deseja receber informções")
+
+        botao_enviar = tk.Button(text="Enviar", command=enviar)
+        botao_enviar.grid(row=7, column=0)
+
+
+AULA_12: RadioButton (OptionButton)
+
+    Passos: Crias as opções, Criar botão de enviar ou adicionara ação as opções.
+    botao_classe_economica = tk.Radiobutton(text="Classe Economica", variable=var_passagem, value='Classe Economica')
+    botao_classe_executiva = tk.Radiobutton(text="Classe Executiva", variable=var_passagem, value='Classe Executiva')
+    botao_classe_economica.grid(row=8, column=0)
+    botao_classe_executiva.grid(row=8, column=1)
+
+    Função COMMAND para utilizar a função em uma botão, tambem pode ser utilizada em cada umas das opções 
+        botao_classe_economica = tk.Radiobutton(text="Classe Economica", variable=var_passagem, value='Classe Economica', command=enviar_passagem)
+        botao_classe_executiva = tk.Radiobutton(text="Classe Executiva", variable=var_passagem, value='Classe Executiva', command=enviar_passagem)
+
+
