@@ -131,3 +131,17 @@ AULA_12: RadioButton (OptionButton)
         botao_classe_executiva = tk.Radiobutton(text="Classe Executiva", variable=var_passagem, value='Classe Executiva', command=enviar_passagem)
 
 
+AULA_13: Pedir para o Usuário Selecionar Arquivo
+
+    armazena a o caminho do arquivo em uma 
+    caminho_arquivo = askopenfilename(title="Selecione um arquivo excel para abrir!")
+
+
+AULA_14: Apresentação do Projeto
+
+    Apresentação da aplicação desktop.
+
+
+AULA_15: Idealização da Janela do Sistema
+
+    Montando design da janela.

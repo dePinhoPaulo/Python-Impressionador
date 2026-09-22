@@ -1,5 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
+from tkinter.filedialog import askopenfilename
+import pandas as pd
 
 janela = tk.Tk()
 
@@ -98,5 +100,13 @@ botao_primeira_classe.grid(row=8, column=2)
 
 botao_enviar_passagem = tk.Button(text="Enviar", command=enviar_passagem)
 botao_enviar_passagem.grid(row=9, column=0)
+
+
+### askopenfilename ###
+
+caminho_arquivo = askopenfilename(title="Selecione um arquivo excel para abrir!")
+
+df = pd.read_excel(caminho_arquivo)
+print(df)
 
 janela.mainloop()
