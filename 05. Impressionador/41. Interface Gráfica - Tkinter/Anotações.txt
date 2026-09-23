@@ -145,3 +145,11 @@ AULA_14: Apresentação do Projeto
 AULA_15: Idealização da Janela do Sistema
 
     Montando design da janela.
+
+
+AULA_16: Construção da Janela do Sistema
+
+    Apenas adicionando elementos na janela;
+    Ainda sem interação:
+    projeto_tkinter.py
+
