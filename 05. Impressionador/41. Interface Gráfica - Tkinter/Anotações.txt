@@ -150,6 +150,12 @@ AULA_15: Idealização da Janela do Sistema
 AULA_16: Construção da Janela do Sistema
 
     Apenas adicionando elementos na janela;
-    Ainda sem interação:
+    Ainda sem interação;
     projeto_tkinter.py
+
+
+AULA_17: Terminando a Construção da Janela do Sistema
+
+    Finalizando os elementos da janela;
+    Ainda sem interação;
 
