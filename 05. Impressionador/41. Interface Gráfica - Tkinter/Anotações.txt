@@ -159,3 +159,31 @@ AULA_17: Terminando a Construção da Janela do Sistema
     Finalizando os elementos da janela;
     Ainda sem interação;
 
+
+AULA_18: Criando lista de Moedas com API
+
+    Wesome API para cotações:
+        https://docs.awesomeapi.com.br/api-de-moedas
+    
+    Pegando lista de moedas da api:
+        requisicao = requests.get('https://economia.awesomeapi.com.br/json/last/all') # Requisição de todas medas da API
+        dicionario_moedas = requisicao.json # Transformando requisição em um dicionario
+
+        lista_moedas = list(dicionario_moedas.keys())
+
+
+AULA_19: Função pegar_cotacao
+
+    Concluindo função que faz a requisição do valor de cada moeda em determinado dia e printa no Sistema:
+        def pegar_cotacao():
+            moeda = combobox_selecionar_moeda.get()
+            data_cotacao = calendario_moeda.get()
+            ano = data_cotacao[-4:] 
+            mes = data_cotacao[3:5]
+            dia = data_cotacao[:2]
+            link = f'https://economia.awesomeapi.com.br/json/daily/{moeda}-BRL/?start_date={ano}{mes}{dia}&end_date={ano}{mes}{dia}'
+            requisica_moeda = requests.get(link)
+            cotacao = requisica_moeda.json()
+            valor_moeda = cotacao[0]['bid'] # Pegando key referente ao valor de fechamento do dia
+            label_texto_cotacao['text'] = f"A cotação do {moeda} no dia {data_cotacao} foi de: R${valor_moeda}"
+

@@ -1,8 +1,12 @@
 import tkinter as tk
 from tkinter import ttk
 from tkcalendar import DateEntry
+import requests
 
-lista_moedas = ['USD', 'EUR']
+requisicao = requests.get('https://economia.awesomeapi.com.br/json/all') # Requisição de todas medas da API
+dicionario_moedas = requisicao.json() # Transformando requisição em um dicionario
+
+lista_moedas = list(dicionario_moedas.keys())
 
 janela = tk.Tk()
 
@@ -12,7 +16,17 @@ janela.title("Ferramenta de cotações de moedas")
 # Cotação de 1 Moeda
 
 def pegar_cotacao():
-    pass
+    moeda = combobox_selecionar_moeda.get()
+    data_cotacao = calendario_moeda.get()
+    ano = data_cotacao[-4:] 
+    mes = data_cotacao[3:5]
+    dia = data_cotacao[:2]
+    link = f'https://economia.awesomeapi.com.br/json/daily/{moeda}-BRL/?start_date={ano}{mes}{dia}&end_date={ano}{mes}{dia}' # Retorna uma lista de objetos
+    requisica_moeda = requests.get(link)
+    cotacao = requisica_moeda.json()
+    valor_moeda = cotacao[0]['bid'] # Pegando key referente ao valor de fechamento do dia
+    print(valor_moeda)
+    label_texto_cotacao['text'] = f"A cotação do {moeda} no dia {data_cotacao} foi de: R${valor_moeda}"
 
 def selecionar_arquivo():
     pass
